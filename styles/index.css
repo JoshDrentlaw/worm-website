@@ -1,0 +1,6 @@
+.discount {
+    width: 100px;
+    position: absolute;
+    right: -25px;
+    transform: rotate(45deg);
+}
