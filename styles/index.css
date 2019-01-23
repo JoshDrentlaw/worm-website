@@ -1,3 +1,19 @@
+#social-media {
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+#social-media button {
+    width: 100px;
+    height: 100px;
+    border: none;
+    margin-bottom: 0.5em;
+}
+
 .discount {
     width: 100px;
     height: 100px;
