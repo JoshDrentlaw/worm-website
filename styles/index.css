@@ -1,3 +1,19 @@
+:root {
+    --bg-color: #e8dacf;
+    --primary-font: #5e4c3e;
+    --buy-color: #3e853e;
+    --logo-red: #bd3225;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--primary-font);
+}
+
+h1 {
+    text-shadow: 0 0 1px black;
+}
+
 #social-media {
     position: fixed;
     margin-top: 15px;
@@ -8,8 +24,8 @@
 }
 
 #social-media button {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     border: none;
     margin-bottom: 0.5em;
 }
