@@ -1,6 +1,6 @@
 #social-media {
     position: fixed;
-    top: 20px;
+    margin-top: 15px;
     left: 10px;
     display: flex;
     flex-direction: column;
@@ -8,8 +8,8 @@
 }
 
 #social-media button {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border: none;
     margin-bottom: 0.5em;
 }
