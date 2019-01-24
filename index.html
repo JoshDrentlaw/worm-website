@@ -17,7 +17,7 @@
             <h2 id="pitch">Do you need worms? We have the worms to meet your needs. Please look below to see the different packages.</h2>
         </section>
         <section id="social-media">
-            <button><a href="#">Twitter</a></button>
+            <button><a href="https://twitter.com">Twitter</a></button>
             <button><a href="#">Instagram</a></button>
             <button><a href="#">Facebook</a></button>
         </section>
@@ -78,8 +78,12 @@
                     <form class="form">
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="form-email" aria-describedby="emailHelp" placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            <input type="email" class="form-control" id="form-email" aria-describedby="disclaimer" placeholder="Enter email">
+                            <small id="disclaimer" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="worm-count">Worms <small class="text-muted" id="worms-uom">(per lb.)</small></label>
+                            <input type="number" class="form-control" id="worm-count" aria-describedby="worms-uom">
                         </div>
                     </form>
                 </div>
