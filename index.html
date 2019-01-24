@@ -81,9 +81,19 @@
                             <input type="email" class="form-control" id="form-email" aria-describedby="disclaimer" placeholder="Enter email">
                             <small id="disclaimer" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
-                        <div class="form-group">
-                            <label for="worm-count">Worms <small class="text-muted" id="worms-uom">(per lb.)</small></label>
-                            <input type="number" class="form-control" id="worm-count" aria-describedby="worms-uom">
+                        <div class="form-group row hor-form">
+                            <label for="worm-count" class="col-auto">Worms <small class="text-muted" id="worms-uom">(per lb.)</small></label>
+                            <input type="number" class="form-control col-2" id="worm-count" aria-describedby="worms-uom">
+                        </div>
+                        <div class="form-group row hor-form">
+                            <label for="compost-count" class="col-auto">Vermicompost <small class="text-muted" id="compost-uom">(per lb.)</small></label>
+                            <input type="number" class="form-control col-2" id="compost-count" aria-describedby="compost-uom">
+                        </div>
+                        <div class="form-group row hor-form">
+                            <label for="delivery" class="col-2">Delivery</label>
+                            <input type="checkbox" class="form-control col-2" id="delivery">
+                            <label for="pickup" class="col-2">Pickup</label>
+                            <input type="checkbox" class="form-control col-2" id="pickup">
                         </div>
                     </form>
                 </div>

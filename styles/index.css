@@ -73,6 +73,11 @@ h1 {
     text-shadow: 0px 0px 5px #d1d1d1;
 }
 
+.hor-form {
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     
