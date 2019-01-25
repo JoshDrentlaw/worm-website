@@ -30,6 +30,11 @@ h1 {
     margin-bottom: 0.5em;
 }
 
+#worm-count, #compost-count {
+    display: inline-block;
+    width: 25px;
+}
+
 .discount {
     width: 100px;
     height: 100px;
@@ -73,7 +78,7 @@ h1 {
     text-shadow: 0px 0px 5px #d1d1d1;
 }
 
-.hor-form {
+.reverse {
     flex-direction: row-reverse;
     justify-content: center;
 }
