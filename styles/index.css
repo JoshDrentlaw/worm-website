@@ -28,11 +28,17 @@ h1 {
     height: 50px;
     border: none;
     margin-bottom: 0.5em;
+    background-color: white;
 }
 
 #worm-count, #compost-count {
     display: inline-block;
     width: 25px;
+}
+
+.buy-color {
+    background-color: var(--buy-color);
+    color: var(--bg-color);
 }
 
 .discount {
@@ -75,7 +81,7 @@ h1 {
     box-shadow: -3px 3px 10px 0px #3f693d;
     font-weight: 700;
     font-size: 20px;
-    text-shadow: 0px 0px 5px #d1d1d1;
+    text-shadow: 0px 0px 5px #2e2e2e;
 }
 
 .reverse {
