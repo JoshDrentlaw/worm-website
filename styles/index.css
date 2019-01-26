@@ -31,6 +31,16 @@ h1 {
     background-color: white;
 }
 
+#social-media button a {
+    width: 100%;
+    height: 100%;
+}
+
+#social-media button a svg {
+    width: 100%;
+    height: 100%;
+}
+
 #worm-count, #compost-count {
     display: inline-block;
     width: 25px;
