@@ -21,11 +21,6 @@ h1 {
     font-weight: 700;
 }
 
-#buy-modal div {
-    background-color: #a9886f;
-    color: black;
-}
-
 #social-media {
     position: fixed;
     margin-top: 15px;
@@ -59,12 +54,17 @@ svg {
     width: 25px;
 }
 
+.modal-content {
+    background-color: #a9886f;
+    color: black;
+}
+
 .form-control {
     border: 2px solid black;
 }
 
 .form-check {
-    outline: 2px solid black;
+    box-shadow: inset 0px 0px 0px 2px black;
 }
 
 .text-muted {
@@ -136,17 +136,6 @@ svg {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-    /* #social-media {
-        position: sticky;
-        top: 0;
-        left: -10px;
-        padding-top: 1em;
-        margin-top: 0;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 180px;
-    } */
-
     #social-media button {
         width: 50px;
         height: 50px;
