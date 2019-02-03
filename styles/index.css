@@ -25,6 +25,10 @@ h1 {
     font-weight: 700;
 }
 
+#pitch {
+    font-size: 1.5rem;
+}
+
 #packages {
     display: flex;
     flex-direction: column;
