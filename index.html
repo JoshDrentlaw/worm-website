@@ -91,38 +91,38 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <form class="form">
+                    <form class="needs-validation" novalidate>
                         <div class="form-group">
                             <label for="email">Email</label>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                            <input type="email" class="form-control" id="form-email" aria-describedby="disclaimer" placeholder="Enter email">
+                            <input type="email" class="form-control" id="form-email" aria-describedby="disclaimer" placeholder="Enter email" required>
                             <small id="disclaimer" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         <div class="form-group form-row reverse">
                             <label for="worm-count" class="col-auto">Worms <small class="text-muted" id="worms-uom">(per lb.)</small></label>
-                            <input type="number" class="form-control col-2" id="worm-count" aria-describedby="worms-uom">
+                            <input type="number" min="0" class="form-control col-2" id="worm-count" aria-describedby="worms-uom" required>
                         </div>
                         <div class="form-group form-row reverse">
                             <label for="compost-count" class="col-auto">Vermicompost <small class="text-muted" id="compost-uom">(per lb.)</small></label>
-                            <input type="number" class="form-control col-2" id="compost-count" aria-describedby="compost-uom">
+                            <input type="number" min="0" class="form-control col-2" id="compost-count" aria-describedby="compost-uom" required>
                         </div>
                         <div class="form-group form-row reverse">
                             <div class="form-check form-check-inline ml-4">
-                                <input type="radio" class="form-check-input" id="delivery" name="deliveryOption" value="delivery">
+                                <input type="radio" class="form-check-input" id="delivery" name="deliveryOption" value="delivery" required>
                                 <label for="delivery" class="form-check-label">Delivery</label>
                             </div>
                             <div class="form-check form-check-inline mr-4">
-                                <input type="radio" class="form-check-input" id="pickup" name="deliveryOption" value="pickup">
+                                <input type="radio" class="form-check-input" id="pickup" name="deliveryOption" value="pickup" required>
                                 <label for="pickup" class="form-check-label">Pickup</label>
                             </div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="If you have any questions, concerns, or special instructions, let me know here"></textarea>
+                            <textarea class="form-control" placeholder="If you have any questions, concerns, or special instructions, let me know here."></textarea>
                         </div>
                         <div class="form-group form-row justify-content-center">
-                            <button type="button" class="btn buy-color">Buy</button>
+                            <button type="submit" class="btn buy-color">Buy</button>
                         </div>
                     </form>
                 </div>
