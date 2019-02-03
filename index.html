@@ -11,8 +11,8 @@
     <title>Alcaraz Worms and Compost</title>
 </head>
 <body>
-    <main class="container justify-content-center text-center pt-4">
-        <h1>
+    <main class="text-center p-4">
+        <h1 id="company">
             <!-- <svg width="100%" height="100%">
                 <text x="0" y="50" fill="#5e4c3e" stroke="black">Alcaraz Worms and Compost</text>
             </svg> -->
@@ -23,25 +23,25 @@
         </section>
 
         <section id="social-media">
-            <button class="bg-primary"><a href="https://twitter.com">
-                <svg>
+            <button class="bg-primary"><a href="https://twitter.com" target="_blank">
+                <svg width="40" height="40">
                     <use xlink:href="svg/twitter-brands.svg#twitter"></use>
                 </svg>
             </a></button>
-            <button style="background-image: linear-gradient(45deg, orange, red, purple);"><a href="https://instagram.com">
-                <svg>
+            <button style="background-image: linear-gradient(45deg, orange, red, purple);"><a href="https://instagram.com" target="_blank">
+                <svg width="40" height="40">
                     <use xlink:href="svg/instagram-brands.svg#instagram"></use>
                 </svg>
             </a></button>
-            <button style="background-color: blue;"><a href="https://facebook.com">
-                <svg style="position: relative; left: 5px; top: 1px;">
+            <button style="background-color: blue;"><a href="https://facebook.com" target="_blank">
+                <svg width="40" height="40" style="position: relative; left: 5px; top: 1px;">
                     <use xlink:href="svg/facebook-f-brands.svg#facebook"></use>
                 </svg>
             </a></button>
         </section>
-        
-        <section id="packages" class="row justify-content-center mt-4">
-            <div class="package card w-75">
+
+        <section id="packages" class="mt-4">
+            <div class="package card">
                 <div class="card-body">
                     <h5 class="card-title">Cheap Package</h5>
                     <p class="card-text">You get this</p>
@@ -49,7 +49,8 @@
                     <a href="#" class="btn buy-color" data-toggle="modal" data-target="#buy-modal">Buy</a>
                 </div>
             </div>
-            <div class="package card w-75 mt-3">
+
+            <div class="package card mt-3">
                 <div class="discount"><span class="buy-color">13% Off!</span></div>
                 <div class="card-body">
                     <h5 class="card-title">Middle Package</h5>
@@ -59,7 +60,7 @@
                     <a href="#" class="btn buy-color" data-toggle="modal" data-target="#buy-modal">Buy</a>
                 </div>
             </div>
-            <div class="package card w-75 mt-3">
+            <div class="package card mt-3">
                     <div class="discount"><span class="buy-color">26% Off!</span></div>
                 <div class="card-body">
                     <h5 class="card-title">Expensive Package</h5>
@@ -75,11 +76,13 @@
         <section id="hours" class="mt-4">
             <h2>Hours for Delivery</h2>
             <ul class="list-group mt-3">
+                <li class="list-group-item">Sunday: <span id="sunday">Closed</span></li>
                 <li class="list-group-item">Monday: <span id="monday">9:00am-12:00pm</span></li>
                 <li class="list-group-item">Tuesday: <span id="tuesday">9:00am-12:00pm</span></li>
                 <li class="list-group-item">Wednesday: <span id="wednesday">9:00am-12:00pm</span></li>
                 <li class="list-group-item">Thursday: <span id="thursday">9:00am-12:00pm</span></li>
                 <li class="list-group-item">Friday: <span id="friday">9:00am-12:00pm</span></li>
+                <li class="list-group-item">Saturday: <span id="saturday">Closed</span></li>
             </ul>
         </section>
     </main>

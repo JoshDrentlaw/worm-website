@@ -11,19 +11,29 @@ body {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
     position: relative;
+    width: 80%;
 }
 
 h1 {
     text-shadow: 0 0 1px black;
     text-align: center;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
+}
+
+#packages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #social-media {
     position: fixed;
-    margin-top: 15px;
+    top: 10px;
     left: 10px;
     display: flex;
     flex-direction: column;
@@ -31,8 +41,8 @@ h1 {
 }
 
 #social-media button {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border: none;
     margin-bottom: 0.5em;
     background-color: white;
@@ -74,6 +84,10 @@ svg {
 .buy-color {
     background-color: var(--buy-color);
     color: white;
+}
+
+.package {
+    width: 100%;
 }
 
 .discount {
@@ -126,16 +140,24 @@ svg {
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-    
+    main {
+        width: 60%;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    
+    main {
+        width: 50%;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+    main {
+        width: 40%;
+    }
+    
     #social-media button {
         width: 50px;
         height: 50px;
@@ -144,5 +166,7 @@ svg {
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    
+    main {
+        width: 30%;
+    }
 }
