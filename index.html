@@ -109,13 +109,17 @@
                             <input type="number" class="form-control col-2" id="compost-count" aria-describedby="compost-uom">
                         </div>
                         <div class="form-group form-row reverse">
-                            <label for="delivery" class="col-2">Delivery</label>
-                            <input type="checkbox" class="form-control form-check col-1" id="delivery">
-                            <label for="pickup" class="col-2">Pickup</label>
-                            <input type="checkbox" class="form-control form-check col-1" id="pickup">
+                            <div class="form-check form-check-inline ml-4">
+                                <input type="radio" class="form-check-input" id="delivery" name="deliveryOption" value="delivery">
+                                <label for="delivery" class="form-check-label">Delivery</label>
+                            </div>
+                            <div class="form-check form-check-inline mr-4">
+                                <input type="radio" class="form-check-input" id="pickup" name="deliveryOption" value="pickup">
+                                <label for="pickup" class="form-check-label">Pickup</label>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control"></textarea>
+                            <textarea class="form-control" placeholder="If you have any questions, concerns, or special instructions, let me know here"></textarea>
                         </div>
                         <div class="form-group form-row justify-content-center">
                             <button type="button" class="btn buy-color">Buy</button>
