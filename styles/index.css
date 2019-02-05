@@ -25,6 +25,14 @@ h1 {
     font-weight: 700;
 }
 
+a, a:link, a:active {
+    color: var(--buy-color);
+}
+
+a:visited {
+    color: #2d5f2d;
+}
+
 #pitch {
     font-size: 1.5rem;
 }
@@ -58,14 +66,24 @@ h1 {
     color: white;
 }
 
-svg {
+/* svg {
     width: 100%;
     height: 100%;
-}
+} */
 
 #worm-count, #compost-count {
     display: inline-block;
     width: 25px;
+}
+
+.navlink {
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+.navlink:nth-child(2) {
+    margin-bottom: 1em;
 }
 
 .modal-content {
@@ -156,6 +174,10 @@ svg {
 @media (min-width: 992px) {
     main {
         width: 40%;
+    }
+
+    .navlink {
+        font-size: 1.5rem;
     }
     
     #social-media button {
