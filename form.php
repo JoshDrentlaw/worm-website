@@ -10,7 +10,7 @@
         $email = sanitize($_POST["email"]);
         $worms = sanitize($_POST["worms"]);
         $compost = sanitize($_POST["compost"]);
-        $delivery = sanitize($_POST["delivery"]);
+        $delivery = sanitize($_POST["deliveryOption"]);
         $comment = sanitize($_POST["comment"]);
     }
 
@@ -37,7 +37,9 @@
 
     // Create email headers
     $headers = 'From: '.$email."\r\n".
-        'Reply-To: '.$email."\r\n" .
-        'X-Mailer: PHP/' . phpversion();
-    @mail($email_to, $email_subject, $email_message, $headers);
+        'Reply-To: '.$email."\r\n".
+        'X-Mailer: PHP/'.phpversion();
+    mail($email_to, $email_subject, $email_message, $headers);
 ?>
+
+Thank you for contaction us.
