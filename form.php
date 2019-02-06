@@ -2,7 +2,7 @@
     // Define vars and set to empty values
     $email = $worms = $compost = $delivery = $comment = "";
 
-    $email_to = "drumbum4life@gmail.com";
+    $email_to = "postmaster@localhost";
     $email_subject = "Test form submit.";
 
     // Trim and remove unwanted chars from submission
@@ -36,9 +36,9 @@
     $email_message .= "Comment: ".clean_string($comment)."\n";
 
     // Create email headers
-    $headers = 'From: '.$email."\r\n".
-        'Reply-To: '.$email."\r\n".
-        'X-Mailer: PHP/'.phpversion();
+    $headers = 'From: ' . $email_to . "\r\n" . 
+        'Reply-To: ' . $email . "\r\n" . 
+        'X-Mailer: PHP/' . phpversion();
     mail($email_to, $email_subject, $email_message, $headers);
 ?>
 
