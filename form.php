@@ -2,7 +2,7 @@
     // Define vars and set to empty values
     $email = $worms = $compost = $delivery = $comment = "";
 
-    $email_to = "postmaster@localhost";
+    $email_to = "drumbum4life@gmail.com";
     $email_subject = "Test form submit.";
 
     // Trim and remove unwanted chars from submission
