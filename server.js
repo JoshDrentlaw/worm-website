@@ -17,7 +17,7 @@ server.post('/', (req, res) => {
         compost: req.body.compost,
         deliveryOption: req.body.deliveryOption,
         comment: req.body.comment
-    });
+    }).catch(console.error());
 });
 
 async function mail(data) {
