@@ -5,6 +5,7 @@ const express = require('express');
 const server = express();
 
 require('dotenv').config();
+console.log(process.env.USER, process.env.PASS)
 
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
