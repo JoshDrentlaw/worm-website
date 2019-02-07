@@ -55,4 +55,4 @@ async function mail(data) {
     console.log("message sent: %s", info.messageId);
 }
 
-server.listen(5500, console.log('Server listening on port 5500....'));
+server.listen(process.env.PORT || 5500, console.log('Server listening on port 5500....'));
