@@ -1,9 +1,14 @@
 "use strict";
 const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
 const express = require('express');
 const server = express();
 
-server.post('/', (req, res) => {
+server.use(bodyParser.json());
+server.use(bodyParser.urlencoded({ extended: true }));
+
+server.get('/', (req, res) => {
+    console.log(req.body.email);
     main().catch(console.error);
 });
 
