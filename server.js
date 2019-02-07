@@ -5,7 +5,6 @@ const express = require('express');
 const server = express();
 
 require('dotenv').config();
-console.log(process.env.USER, process.env.PASS)
 
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
@@ -56,4 +55,8 @@ async function mail(data) {
     console.log("message sent: %s", info.messageId);
 }
 
-server.listen(process.env.PORT || 5500, console.log('Server listening on port 5500....'));
+let port = process.env.PORT || 5500;
+server.listen(port, () =>  {
+    console.log(`Server listening on port ${port}....`);
+    console.log(process.env.USER, process.env.PASS);
+});
