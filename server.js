@@ -1,38 +1,52 @@
-"use strict";
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const path = require('path');
 const express = require('express');
 const server = express();
 
+require('dotenv').config();
+
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
+server.use(express.static('client'))
 
-server.get('/', (req, res) => {
-    console.log(req.body.email);
-    main().catch(console.error);
+server.post('/', (req, res) => {
+    mail({
+        email: req.body.email,
+        worms: req.body.worms,
+        compost: req.body.compost,
+        deliveryOption: req.body.deliveryOption,
+        comment: req.body.comment
+    });
 });
 
-async function main() {
-    const user = "joshdrentlaw@gmail.com";
-    const pass = "v.u5xQo0g";
-
+async function mail(data) {
     // Create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
         port: 465,
         secure: true,
         auth: {
-            user: user,
-            pass: pass
+            user: process.env.USER,
+            pass: process.env.PASS
         }
     });
 
     // Setup email data with unicode symbols
     let mailOptions = {
-        from: user,
-        to: user,
+        from: process.env.USER,
+        to: process.env.USER,
         subject: "Test",
-        html: `<h1>TEST</h1>`
+        html: `
+            <h1>Submitted Data</h1>
+            <ul>
+                <li>Email: ${data.email}</li>
+                <li>Worms: ${data.worms}</li>
+                <li>Compost: ${data.compost}</li>
+                <li>Delivery Option: ${data.deliveryOption}</li>
+                <li>Comment: ${data.comment}</li>
+            </ul>
+        `
     };
 
     // send mail with defined transport object
