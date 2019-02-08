@@ -19,7 +19,7 @@
             Alcaraz <br /> Worms and Compost
         </h1>
         <section id="pitch-ctn" class="mt-4">
-            <p id="pitch">Do you need worms? We have the worms to meet your needs. Please look below to see our different packages or <a id="about-link" href="about.html">click here</a> to learn about our products.</p>
+            <p id="pitch">Start your own compost system run by<br />WORM POWER</p>
         </section>
 
         <section id="social-media">
@@ -42,38 +42,50 @@
             </a></button>
         </section>
 
-        <section id="packages" class="mt-4">
-            <div class="package card">
-                <div class="card-body">
-                    <h5 class="card-title">Cheap Package</h5>
-                    <p class="card-text">You get this</p>
-                    <p class="card-text">And you get this</p>
-                    <button class="btn buy-color" data-toggle="modal" data-target="#buy-modal">Buy</button>
+        <form class="needs-validation form-content" action="/" method="GET" novalidate>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button> -->
+                <input type="email" name="email" class="form-control" id="form-email" aria-describedby="disclaimer" placeholder="Enter email" required>
+                <small id="disclaimer" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group form-row">
+                <label for="worm-count" class="col-auto">Worms</label>
+                <input type="number" min="0" value="0" name="worms" class="form-control col-2" id="worm-count" aria-describedby="worms-uom" required>
+                <small class="ml-1 text-muted" id="worms-uom">($10 per lb.)</small>
+                <small class="form-text">Every pound contains: Adult Earthworms, Juvenile Earthworms, Egg Cases, and Compost!</small>
+            </div>
+            <div class="form-group form-row">
+                <label for="compost-count" class="col-auto">Vermicompost</label>
+                <input type="number" min="0" value="0" name="compost" class="form-control col-2" id="compost-count" aria-describedby="compost-uom" required>
+                <small class="ml-1 text-muted" id="compost-uom">($50 per 10 lb.)</small>
+                <small class="form-text">Rich black compost castings. Some worms may be included!</small>
+            </div>
+            <div class="form-group form-row">
+                <label for="compost-count" class="col-auto">Compost Tea</label>
+                <input type="number" min="0" value="0" name="tea" class="form-control col-2" id="compost-count" aria-describedby="tea-uom" required>
+                <small class="ml-1 text-muted" id="tea-uom">($25 per 5 gal.)</small>
+                <small class="form-text">FRESH compost tea. Feed your plants with naturally high nutrient liquid fertilizer.</small>
+            </div>
+            <div class="form-group form-row">
+                <div class="form-check form-check-inline ml-4">
+                    <input type="radio" class="form-check-input" id="delivery" name="deliveryOption" value="delivery" required>
+                    <label for="delivery" class="form-check-label">Delivery</label>
+                </div>
+                <div class="form-check form-check-inline mr-4">
+                    <input type="radio" class="form-check-input" id="pickup" name="deliveryOption" value="pickup" checked required>
+                    <label for="pickup" class="form-check-label">Pickup</label>
                 </div>
             </div>
-
-            <div class="package card mt-3">
-                <div class="discount"><span class="buy-color">13% Off!</span></div>
-                <div class="card-body">
-                    <h5 class="card-title">Middle Package</h5>
-                    <p class="card-text">You get this</p>
-                    <p class="card-text">And you get this</p>
-                    <p class="card-text">And you get this</p>
-                    <button class="btn buy-color" data-toggle="modal" data-target="#buy-modal">Buy</button>
-                </div>
+            <div class="form-group">
+                <textarea class="form-control" name="comment" placeholder="If you have any questions, concerns, or special instructions, let me know here."></textarea>
             </div>
-            <div class="package card mt-3">
-                    <div class="discount"><span class="buy-color">26% Off!</span></div>
-                <div class="card-body">
-                    <h5 class="card-title">Expensive Package</h5>
-                    <p class="card-text">You get this</p>
-                    <p class="card-text">And you get this</p>
-                    <p class="card-text">And you get this</p>
-                    <p class="card-text">And you get this</p>
-                    <button class="btn buy-color" data-toggle="modal" data-target="#buy-modal">Buy</button>
-                </div>
+            <div class="form-row justify-content-center">
+                <button type="submit" class="btn buy-color">Contact</button>
             </div>
-        </section>
+        </form>
 
         <section id="hours" class="mt-4">
             <h2>Hours for Delivery</h2>
@@ -88,49 +100,6 @@
             </ul>
         </section>
     </main>
-
-    <div id="buy-modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <form class="needs-validation" action="/" method="GET" novalidate>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            <input type="email" name="email" class="form-control" id="form-email" aria-describedby="disclaimer" placeholder="Enter email" required>
-                            <small id="disclaimer" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
-                        <div class="form-group form-row reverse">
-                            <label for="worm-count" class="col-auto">Worms <small class="text-muted" id="worms-uom">(per lb.)</small></label>
-                            <input type="number" min="0" value="0" name="worms" class="form-control col-2" id="worm-count" aria-describedby="worms-uom" required>
-                        </div>
-                        <div class="form-group form-row reverse">
-                            <label for="compost-count" class="col-auto">Vermicompost <small class="text-muted" id="compost-uom">(per lb.)</small></label>
-                            <input type="number" min="0" value="0" name="compost" class="form-control col-2" id="compost-count" aria-describedby="compost-uom" required>
-                        </div>
-                        <div class="form-group form-row reverse">
-                            <div class="form-check form-check-inline ml-4">
-                                <input type="radio" class="form-check-input" id="delivery" name="deliveryOption" value="delivery" required>
-                                <label for="delivery" class="form-check-label">Delivery</label>
-                            </div>
-                            <div class="form-check form-check-inline mr-4">
-                                <input type="radio" class="form-check-input" id="pickup" name="deliveryOption" value="pickup" checked required>
-                                <label for="pickup" class="form-check-label">Pickup</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" name="comment" placeholder="If you have any questions, concerns, or special instructions, let me know here."></textarea>
-                        </div>
-                        <div class="form-group form-row justify-content-center">
-                            <button type="submit" class="btn buy-color">Buy</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>

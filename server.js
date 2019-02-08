@@ -9,7 +9,7 @@ server.use(bodyParser.urlencoded({ extended: true }));
 
 server.get('/', (req, res) => {
     console.log(req.body.email);
-    main().catch(console.error);
+    // main().catch(console.error);
 });
 
 async function main() {

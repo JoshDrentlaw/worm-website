@@ -33,6 +33,15 @@ a:visited {
     color: #2d5f2d;
 }
 
+label {
+    font-size: 1.5rem;
+}
+
+small {
+    margin: auto 0;
+    font-weight: 700;
+}
+
 #pitch {
     font-size: 1.5rem;
 }
@@ -86,9 +95,16 @@ a:visited {
     margin-bottom: 1em;
 }
 
-.modal-content {
+.form-group {
+    margin-bottom: 2em;
+    justify-content: center;
+}
+
+.form-content {
     background-color: #a9886f;
     color: black;
+    padding: 1em;
+    border-radius: 5px;
 }
 
 .form-control {
