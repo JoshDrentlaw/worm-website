@@ -20,6 +20,11 @@ server.post('/', (req, res) => {
     }).catch(console.error());
 });
 
+server.get('/', (req, res) => {
+    console.log(req.body.email);
+    // main().catch(console.error);
+});
+
 async function mail(data) {
     // Create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
@@ -56,7 +61,6 @@ async function mail(data) {
 }
 
 let port = process.env.PORT || 5500;
-server.listen(port, () =>  {
+server.listen(port, () => {
     console.log(`Server listening on port ${port}....`);
-    console.log(process.env.USER, process.env.PASS);
 });
