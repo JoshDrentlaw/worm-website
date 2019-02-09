@@ -4,6 +4,13 @@ const path = require('path');
 const express = require('express');
 const server = express();
 
+const credentials = {
+    client: {
+        
+    }
+};
+const oauth2 = require('simple-oauth2').create(credentials);
+
 require('dotenv').config();
 
 server.use(bodyParser.json());
@@ -32,8 +39,14 @@ async function mail(data) {
         port: 465,
         secure: true,
         auth: {
+            type: 'OAuth2',
             user: process.env.USER,
-            pass: process.env.PASS
+            clientId: '',
+            clientSecret: '',
+            refreshToken: '',
+            accessToken: '',
+            expires: '',
+            accessUrl: ''
         }
     });
 

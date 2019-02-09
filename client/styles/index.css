@@ -80,9 +80,8 @@ small {
     height: 100%;
 } */
 
-#worm-count, #compost-count {
+#worm-count, #compost-count, #tea-count {
     display: inline-block;
-    width: 25px;
 }
 
 .navlink {
@@ -97,7 +96,9 @@ small {
 
 .form-group {
     margin-bottom: 2em;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .form-content {
@@ -167,33 +168,32 @@ small {
     text-shadow: 0px 0px 5px #2e2e2e;
 }
 
-.reverse {
-    flex-direction: row-reverse;
-    justify-content: center;
-}
-
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     main {
-        width: 60%;
+        width: 70%;
     }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     main {
-        width: 50%;
+        width: 60%;
     }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     main {
-        width: 40%;
+        width: 50%;
     }
 
     .navlink {
         font-size: 1.5rem;
+    }
+
+    .form-group {
+        flex-direction: row;
     }
     
     #social-media button {
@@ -205,6 +205,6 @@ small {
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     main {
-        width: 30%;
+        width: 40%;
     }
 }
