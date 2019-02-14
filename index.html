@@ -42,7 +42,12 @@
             </a></button>
         </section>
 
-        <form class="needs-validation form-content" action="/" method="GET" novalidate>
+        <form class="needs-validation form-content" name="contact" method="POST" data-netlify="true" novalidate>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control" id="form-email" aria-describedby="disclaimer" placeholder="Enter email" required>
+                <small id="disclaimer" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
             <div class="form-group form-row">
                 <label for="worm-count" class="col-auto">Worms</label>
                 <input type="number" min="0" value="0" name="worms" class="form-control col-2" id="worm-count" aria-describedby="worms-uom" required>
@@ -74,10 +79,8 @@
             <div class="form-group">
                 <textarea class="form-control" name="comment" placeholder="If you have any questions, concerns, or special instructions, let me know here."></textarea>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" class="form-control" id="form-email" aria-describedby="disclaimer" placeholder="Enter email" required>
-                <small id="disclaimer" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <div class="form-group form-row">
+                <div data-netlify-recaptcha="true"></div>
             </div>
             <div class="form-row justify-content-center">
                 <button type="submit" class="btn buy-color">Contact</button>
