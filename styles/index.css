@@ -55,10 +55,10 @@ main {
     background-color: blue;
 }
 
-#facebook-svg {
+#facebook-i {
     position: relative;
     left: 5px;
-    top: 1px;
+    top: 5px;
 }
 
 #pitch {
@@ -75,8 +75,10 @@ small {
     font-weight: 700;
 }
 
-svg {
+i {
     color: white;
+    font-size: 30px;
+
 }
 
 .social-btn {
@@ -166,6 +168,10 @@ svg {
 @media (min-width: 992px) {
     main {
         width: 45%;
+    }
+
+    i {
+        font-size: 40px;
     }
 
     .navlink {
