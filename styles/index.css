@@ -20,11 +20,11 @@ a:visited {
 
 /* LAYOUT */
 #nav {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     top: 10px;
     left: 10px;
-    display: flex;
-    flex-direction: column;
     z-index: 100;
 }
 
