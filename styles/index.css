@@ -28,6 +28,13 @@ a:visited {
     z-index: 100;
 }
 
+#lang-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+}
+
 h1 {
     text-shadow: 0 0 1px black;
     text-align: center;
