@@ -2,6 +2,6 @@ backend:
   name: git-gateway
   branch: master
 publish_mode: editorial_workflow
-collections:
+collections: []
 media_folder: styles
-media_library: styles
+media_library: {}
