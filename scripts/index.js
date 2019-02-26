@@ -1,35 +1,4 @@
 (function() {
-    /* NETLIFY IDENTITY LOGIN/LOGOUT */
-    if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-            if (!user) {
-                window.netlifyIdentity.on("login", () => {
-                    document.location.href = "/admin/";
-                });
-            }
-        });
-    }
-
-    // Open the modal
-    netlifyIdentity.open();
-
-    // Get the current user:
-    const user = netlifyIdentity.currentUser();
-
-    // Bind to events
-    netlifyIdentity.on('init', user => console.log('init', user));
-    netlifyIdentity.on('login', user => console.log('login', user));
-    netlifyIdentity.on('logout', () => console.log('Logged out'));
-    netlifyIdentity.on('error', err => console.error('Error', err));
-    netlifyIdentity.on('open', () => console.log('Widget opened'));
-    netlifyIdentity.on('close', () => console.log('Widget closed'));
-
-    // Close the modal
-    netlifyIdentity.close();
-
-    // Log out the user
-    netlifyIdentity.logout();
-
     /* HIGHLIGHT DAY OF THE WEEK IN SCHEDULE */
     let weekday = new Date().getDay();
     const weekdays = document.getElementById('weekdays').children;
