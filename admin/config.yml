@@ -7,7 +7,15 @@ collections:
     label: "Hours"
     folder: "admin/hours"
     create: true
+    identifier_field: "new hours"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Hours", name: "hours", widget: "string"}
+      - {label: "New Hours", name: "new hours", widget: "string", default: "New Hours"}
+      - {label: "Sunday", name: "sunday hours", widget: "string"}
+      - {label: "Monday", name: "monday hours", widget: "string"}
+      - {label: "Tuesday", name: "tuesday hours", widget: "string"}
+      - {label: "Wednesday", name: "wednesday hours", widget: "string"}
+      - {label: "Thursday", name: "thursday hours", widget: "string"}
+      - {label: "Friday", name: "friday hours", widget: "string"}
+      - {label: "Saturday", name: "saturday hours", widget: "string"}
 media_folder: "admin/uploads"
