@@ -8,6 +8,8 @@ collections:
     folder: "admin/hours"
     create: true
     identifier_field: "new hours"
+    extension: json
+    format: json
     slug: "{{slug}}"
     fields:
       - {label: "New Hours", name: "new hours", widget: "string", default: "New Hours"}
