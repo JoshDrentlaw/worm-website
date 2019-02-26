@@ -3,5 +3,11 @@ backend:
   branch: master
 publish_mode: editorial_workflow
 collections:
-  - name: hours
-media_folder: changes
+  - name: "hours"
+    label: "Hours"
+    folder: "admin/hours"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Hours", name: "hours", widget: "string"}
+media_folder: "admin/uploads"
