@@ -7,7 +7,7 @@ collections:
     label: "Hours"
     folder: "admin/hours"
     create: true
-    identifier_field: "new-hours"
+    identifier_field: "new hours"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "New Hours", name: "new hours", widget: "string", default: "New Hours"}
