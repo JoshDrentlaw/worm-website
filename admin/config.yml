@@ -9,7 +9,7 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "New Hours", name: "new hours", widget: "hidden", default: "new hours"}
+      - {label: "New Hours", name: "new hours", widget: "string", default: "new hours"}
       - {label: "Sunday", name: "sunday hours", widget: "string"}
       - {label: "Monday", name: "monday hours", widget: "string"}
       - {label: "Tuesday", name: "tuesday hours", widget: "string"}
