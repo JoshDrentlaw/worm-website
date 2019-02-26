@@ -9,11 +9,12 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Sunday Hours", name: "sunday hours", widget: "string"}
-      - {label: "Monday Hours", name: "monday hours", widget: "string"}
-      - {label: "Tuesday Hours", name: "tuesday hours", widget: "string"}
-      - {label: "Wednesday Hours", name: "wednesday hours", widget: "string"}
-      - {label: "Thursday Hours", name: "thursday hours", widget: "string"}
-      - {label: "Friday Hours", name: "friday hours", widget: "string"}
-      - {label: "Saturday Hours", name: "saturday hours", widget: "string"}
+      - {label: "New Hours", name: "new hours", widget: "hidden", default: "new hours"}
+      - {label: "Sunday", name: "sunday hours", widget: "string"}
+      - {label: "Monday", name: "monday hours", widget: "string"}
+      - {label: "Tuesday", name: "tuesday hours", widget: "string"}
+      - {label: "Wednesday", name: "wednesday hours", widget: "string"}
+      - {label: "Thursday", name: "thursday hours", widget: "string"}
+      - {label: "Friday", name: "friday hours", widget: "string"}
+      - {label: "Saturday", name: "saturday hours", widget: "string"}
 media_folder: "admin/uploads"
