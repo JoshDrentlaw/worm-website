@@ -71,16 +71,6 @@ main {
 
 /* MODULES */
 
-.navlink {
-  font-weight: 700;
-  text-align: left;
-  margin-bottom: 0.5rem;
-}
-
-.navlink:nth-child(2) {
-  margin-bottom: 1em;
-}
-
 .buy-color {
   background-color: var(--buy-color);
   color: white;

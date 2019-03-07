@@ -28,8 +28,8 @@ const FaIcon = styled(FontAwesomeIcon)`
 
 const Header = ({ siteTitle }) => (
     <nav id="nav">
-        <Link className="navlink" to="/">Home</Link>
-        <Link className="navlink" to="/about/">About</Link>
+        <Link className="font-bold text-left mb-2" to="/">Home</Link>
+        <Link className="font-bold text-left mb-4" to="/about/">About</Link>
         <SocialBtn id="twitter-btn"><SocialLink href="https://twitter.com" target="_blank" rel="noopener noreferrer">
             <FaIcon icon={faTwitter}></FaIcon>
         </SocialLink></SocialBtn>

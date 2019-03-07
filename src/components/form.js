@@ -29,6 +29,10 @@ const FormGroup = styled.div`
     ${media.tablet(tw`flex-row`)}
 `
 
+/* const Label = styled.label`
+    ${tw`font-medium`};
+` */
+
 const FormInput = styled.input`
     ${tw`border-2 border-black mx-2 p-2`}
 
@@ -63,7 +67,7 @@ class Form extends React.Component {
 
             <Container name="contact" method="POST" data-netlify="true">
                 <FormGroup>
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email" className="font-medium">Email</label>
                     <FormInput type="email" name="email" className="" id="form-email" aria-describedby="disclaimer" placeholder="Enter email" required />
                 </FormGroup>
                 <SmallInfo id="disclaimer">We'll never share your email with anyone else.</SmallInfo>
