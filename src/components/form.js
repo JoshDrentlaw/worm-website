@@ -20,7 +20,7 @@ const media = Object.keys(sizes).reduce((acc, label) => {
 }, {})
 
 const Container = styled.form`
-    ${tw`bg-light-brown text-black p-4 rounded`};
+    ${tw`bg-light-brown text-black p-6 rounded`};
 `
 
 const FormGroup = styled.div`
@@ -29,14 +29,8 @@ const FormGroup = styled.div`
     ${media.tablet(tw`flex-row`)}
 `
 
-/* const Label = styled.label`
-    ${tw`font-medium`};
-` */
-
 const FormInput = styled.input`
-    ${tw`border-2 border-black mx-2 p-2`}
-
-    ${media.tablet`margin: `}
+    ${tw`border-2 border-black m-2 p-2`}
 `
 
 const UnitInput = styled(FormInput)`
@@ -44,65 +38,66 @@ const UnitInput = styled(FormInput)`
 `
 
 const UnitDesc = styled.small`
-    ${tw`text-black text-sm`}
+    ${tw`text-black font-medium font-semibold`}
 `
 
 const SmallInfo = styled.small`
-    ${tw`block mb-8 text-center color-black`}
+    ${tw`block mb-8 text-center text-black`}
 `
 
 class Form extends React.Component {
-    validate(e) {
-        /* const form = this.parentElement;
-        console.log(this);
+    
+
+    validate = (e) => {
+        const form = document.getElementById('contact-form');
         if (form.checkValidity() === false) {
             e.preventDefault();
             e.stopPropagation();
         }
-        form.classList.add('was-validated'); */
+        form.classList.add("bg-color-green");
     }
 
     render() {
         return (
 
-            <Container name="contact" method="POST" data-netlify="true">
+            <Container id="contact-form" name="contact" method="POST" data-netlify="true">
                 <FormGroup>
-                    <label htmlFor="email" className="font-medium">Email</label>
-                    <FormInput type="email" name="email" className="" id="form-email" aria-describedby="disclaimer" placeholder="Enter email" required />
-                </FormGroup>
-                <SmallInfo id="disclaimer">We'll never share your email with anyone else.</SmallInfo>
-                <FormGroup>
-                    <label htmlFor="worm-count" className="col-auto">Worms</label>
+                    <label htmlFor="worm-count" className="font-semibold">Worms</label>
                     <UnitInput type="number" min="0" step="1" defaultValue="0" name="worms" className="num-input" id="worm-count" aria-describedby="worms-uom" required />
                     <UnitDesc id="worms-uom">($10 per lb.)</UnitDesc>
                 </FormGroup>
                 <SmallInfo>Every pound contains: Adult Earthworms, Juvenile Earthworms, Egg Cases, and Compost!</SmallInfo>
                 <FormGroup>
-                    <label htmlFor="compost-count" className="col-auto">Vermicompost</label>
+                    <label htmlFor="compost-count" className="font-semibold">Vermicompost</label>
                     <UnitInput type="number" min="0" step="10" defaultValue="0" name="compost" className="num-input" id="compost-count" aria-describedby="compost-uom" required />
                     <UnitDesc id="compost-uom">($50 per 10 lb.)</UnitDesc>
                 </FormGroup>
                 <SmallInfo>Rich black compost castings. Some worms may be included!</SmallInfo>
                 <FormGroup>
-                    <label htmlFor="compost-count" className="col-auto">Compost Tea</label>
+                    <label htmlFor="compost-count" className="font-semibold">Compost Tea</label>
                     <UnitInput type="number" min="0" step="5" defaultValue="0" name="tea" className="num-input" id="tea-count" aria-describedby="tea-uom" required />
                     <UnitDesc id="tea-uom">($25 per 5 gal.)</UnitDesc>
                 </FormGroup>
                 <SmallInfo>FRESH compost tea. Feed your plants with naturally high nutrient liquid fertilizer.</SmallInfo>
                 <FormGroup>
-                    <div>
-                        <input type="radio" className="form-check-input" id="delivery" name="deliveryOption" defaultValue="delivery" required />
-                        <label htmlFor="delivery" className="form-check-label">Delivery</label>
+                    <div className="mb-4">
+                        <input type="radio" className="" id="delivery" name="deliveryOption" defaultValue="delivery" required />
+                        <label htmlFor="delivery" className="font-semibold ml-1 mr-3">Delivery</label>
                     </div>
-                    <div>
-                        <input type="radio" className="form-check-input" id="pickup" name="deliveryOption" defaultValue="pickup" defaultChecked required />
-                        <label htmlFor="pickup" className="form-check-label">Pickup</label>
+                    <div className="mb-4">
+                        <input type="radio" className="" id="pickup" name="deliveryOption" defaultValue="pickup" defaultChecked required />
+                        <label htmlFor="pickup" className="font-semibold ml-1">Pickup</label>
                     </div>
                 </FormGroup>
                 <FormGroup>
-                    <textarea className="p-2 w-full block border-2 border-black" name="comment" rows="4" placeholder="If you have any questions, concerns, or special instructions, let me know here."></textarea>
+                    <textarea className="p-2 mb-4 w-full block border-2 border-black" name="comment" rows="4" placeholder="If you have any questions, concerns, or special instructions, let me know here."></textarea>
                 </FormGroup>
-                <button type="submit" className="block mx-auto" onClick={this.validate}>Contact</button>
+                <FormGroup>
+                    <label htmlFor="email" className="font-semibold">Email</label>
+                    <FormInput type="email" name="email" id="form-email" aria-describedby="disclaimer" placeholder="Enter email" required />
+                </FormGroup>
+                <SmallInfo id="disclaimer">We'll never share your email with anyone else.</SmallInfo>
+                <button type="submit" className="block mx-auto bg-buy text-white p-2 rounded" onClick={this.validate}>Contact</button>
             </Container>
         )
     }

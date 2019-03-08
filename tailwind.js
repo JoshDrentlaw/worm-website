@@ -45,6 +45,10 @@ View the full documentation at https://tailwindcss.com.
 
 let colors = {
   'transparent': 'transparent',
+  'bg': '#e8dacf',
+  'primary': '#5e4c3e',
+  'buy': '#3e853e',
+  'logo-red': '#bd3225',
 
   'black': '#22292f',
   'grey-darkest': '#3d4852',

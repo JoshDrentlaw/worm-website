@@ -3,34 +3,13 @@
 @tailwind utilities;
 
 /* BASE */
-:root {
-  --bg-color: #e8dacf;
-  --primary-font: #5e4c3e;
-  --buy-color: #3e853e;
-  --logo-red: #bd3225;
-}
 
 body {
   background-color: var(--bg-color);
   color: var(--primary-font);
 }
-a, a:link, a:active {
-  color: var(--buy-color);
-}
-
-a:visited {
-  color: #2d5f2d;
-}
 
 /* LAYOUT */
-#nav {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 100;
-}
 
 h1 {
   text-shadow: 0 0 1px black;
@@ -65,16 +44,7 @@ main {
   top: 5px;
 }
 
-#pitch {
-  font-size: 1.5rem;
-}
-
 /* MODULES */
-
-.buy-color {
-  background-color: var(--buy-color);
-  color: white;
-}
 
 /* STATE */
 
