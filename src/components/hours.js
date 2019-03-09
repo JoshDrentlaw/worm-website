@@ -4,7 +4,7 @@ import styled from "styled-components"
 import tw from "tailwind.macro"
 
 const Container = styled.section`
-    ${tw`mt-4 border border-grey-dark text-center`};
+    ${tw`mt-4 border border-grey-dark rounded text-center`};
 `
 
 class Hours extends React.Component {

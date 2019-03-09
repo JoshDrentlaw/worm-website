@@ -9,9 +9,16 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
+import styled from "styled-components"
+import tw from "tailwind.macro"
+
 import Header from "./header"
 import Footer from "./footer"
 import "./layout.css"
+
+const Container = styled.main`
+  ${tw`flex flex-col mx-auto relative w-3/5`};
+`
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -33,7 +40,7 @@ const Layout = ({ children }) => (
             maxWidth: 960,
           }}
         >
-          <main>{children}</main>
+          <Container>{children}</Container>
           <Footer />
         </div>
       </>

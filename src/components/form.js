@@ -15,7 +15,6 @@ const media = Object.keys(sizes).reduce((acc, label) => {
             ${css(...args)}
         }
     `
-
     return acc
 }, {})
 
@@ -30,11 +29,11 @@ const FormGroup = styled.div`
 `
 
 const FormInput = styled.input`
-    ${tw`border-2 border-black m-2 p-2`}
+    ${tw`border-2 border-black m-2 p-2 w-4/5`}
 `
 
 const UnitInput = styled(FormInput)`
-    ${tw`w-1/6`}
+    ${tw`w-12`}
 `
 
 const UnitDesc = styled.small`
