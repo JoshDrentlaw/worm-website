@@ -17,7 +17,7 @@ import Footer from "./footer"
 import "./layout.css"
 
 const Container = styled.main`
-  ${tw`flex flex-col mx-auto relative w-3/5`};
+  ${tw`flex flex-col mx-auto relative w-3/5 text-primary`};
 `
 
 const Layout = ({ children }) => (
@@ -34,12 +34,7 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-          }}
-        >
+        <div className="bg-bg">
           <Container>{children}</Container>
           <Footer />
         </div>

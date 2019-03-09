@@ -4,19 +4,7 @@
 
 /* BASE */
 
-body {
-  background-color: var(--bg-color);
-  color: var(--primary-font);
-}
-
 /* LAYOUT */
-
-h1 {
-  text-shadow: 0 0 1px black;
-  text-align: center;
-  font-size: 3rem;
-  font-weight: 700;
-}
 
 #twitter-btn {
   background-color: #007bff;

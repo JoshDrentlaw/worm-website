@@ -28,6 +28,10 @@ const FormGroup = styled.div`
     ${media.tablet(tw`flex-row`)}
 `
 
+const Header = styled.h2`
+    ${tw`text-3xl text-center mb-2`}
+`
+
 const FormInput = styled.input`
     ${tw`border-2 border-black m-2 p-2 w-4/5`}
 `
@@ -60,6 +64,7 @@ class Form extends React.Component {
         return (
 
             <Container id="contact-form" name="contact" method="POST" data-netlify="true">
+                <Header>Want to get in touch?</Header>
                 <FormGroup>
                     <label htmlFor="worm-count" className="font-semibold">Worms</label>
                     <UnitInput type="number" min="0" step="1" defaultValue="0" name="worms" className="num-input" id="worm-count" aria-describedby="worms-uom" required />
