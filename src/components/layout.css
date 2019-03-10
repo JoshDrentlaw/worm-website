@@ -6,18 +6,6 @@
 
 /* LAYOUT */
 
-#twitter-btn {
-  background-color: #007bff;
-}
-
-#instagram-btn {
-  background-image: linear-gradient(45deg, orange, red, purple);
-}
-
-#facebook-btn {
-  background-color: blue;
-}
-
 #facebook-i {
   position: relative;
   left: 5px;
@@ -62,9 +50,4 @@
       width: 50px;
       height: 50px;
   }
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  
 }

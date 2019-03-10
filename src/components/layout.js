@@ -9,15 +9,33 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import tw from "tailwind.macro"
 
 import Header from "./header"
 import Footer from "./footer"
 import "./layout.css"
 
+const sizes = {
+    desktop: 992,
+    tablet: 768,
+    landscape: 576,
+}
+
+// Iterate through the sizes and create a media template
+export const media = Object.keys(sizes).reduce((acc, label) => {
+    acc[label] = (...args) => css`
+        @media (min-width: ${sizes[label] / 16}em) {
+            ${css(...args)}
+        }
+    `
+    return acc
+}, {})
+
 const Container = styled.main`
   ${tw`flex flex-col mx-auto relative w-3/5 text-primary`};
+
+  ${media.desktop(tw`w-2/5`)}
 `
 
 const Layout = ({ children }) => (

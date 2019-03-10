@@ -40,13 +40,13 @@ const Header = ({ siteTitle }) => (
     <Nav id="nav">
         <Link className="font-bold text-left text-buy mb-2 no-underline" to="/">Home</Link>
         <Link className="font-bold text-left text-buy mb-4 no-underline" to="/about/">About</Link>
-        <SocialBtn id="twitter-btn"><SocialLink href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <SocialBtn id="twitter-btn" className="bg-twitter-blue"><SocialLink href="https://twitter.com" target="_blank" rel="noopener noreferrer">
             <FaIcon icon={faTwitter}></FaIcon>
         </SocialLink></SocialBtn>
-        <SocialBtn id="instagram-btn"><SocialLink href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <SocialBtn id="instagram-btn" style={{ backgroundImage: `linear-gradient(45deg, orange, red, purple)`}}><SocialLink href="https://instagram.com" target="_blank" rel="noopener noreferrer">
             <FaIcon icon={faInstagram}></FaIcon>
         </SocialLink></SocialBtn>
-        <SocialBtn id="facebook-btn"><SocialLink href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+        <SocialBtn className="bg-fb-blue" id="facebook-btn"><SocialLink href="https://facebook.com" target="_blank" rel="noopener noreferrer">
             <FaIcon icon={faFacebookF} id="facebook-i"></FaIcon>
         </SocialLink></SocialBtn>
     </Nav>

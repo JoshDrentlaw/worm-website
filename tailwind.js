@@ -49,6 +49,8 @@ let colors = {
   'primary': '#5e4c3e',
   'buy': '#3e853e',
   'logo-red': '#bd3225',
+  'fb-blue': '#0000ff',
+  'twitter-blue': '#007bff',
 
   'black': '#22292f',
   'grey-darkest': '#3d4852',

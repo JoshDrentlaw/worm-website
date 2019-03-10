@@ -1,22 +1,7 @@
 import React from "react"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import tw from "tailwind.macro"
-
-const sizes = {
-    desktop: 992,
-    tablet: 768,
-    landscape: 576,
-}
-
-// Iterate through the sizes and create a media template
-const media = Object.keys(sizes).reduce((acc, label) => {
-    acc[label] = (...args) => css`
-        @media (min-width: ${sizes[label] / 16}em) {
-            ${css(...args)}
-        }
-    `
-    return acc
-}, {})
+import { media } from "./layout"
 
 const Container = styled.form`
     ${tw`bg-light-brown text-black p-6 rounded`};
