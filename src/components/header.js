@@ -18,7 +18,7 @@ const Nav = styled.nav`
 `
 
 const SocialBtn = styled.button`
-    ${tw`mb-2 border-0 bg-white`};
+    ${tw`mb-2 border-0`};
     width: 40px;
     height: 40px;
 `
