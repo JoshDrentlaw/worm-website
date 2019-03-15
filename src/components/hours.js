@@ -5,6 +5,7 @@ import tw from "tailwind.macro"
 
 const Container = styled.section`
     ${tw`mt-4 border border-grey-dark rounded text-center`};
+    background-color: rgba(255, 255, 255, 0.3);
 `
 
 class Hours extends React.Component {
