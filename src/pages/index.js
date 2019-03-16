@@ -18,7 +18,7 @@ const IndexPage = () => (
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <Company>Alcaraz<br />Worms and Compost</Company>
         <section id="pitch-ctn" className="my-4">
-            <p id="pitch" className="text-center">Start your own compost system run by<br />WORM POWER</p>
+            <p id="pitch" className="text-center">Start your own compost system run by<br />✨🐛WORM POWER🐛✨</p>
         </section>
         <Form />
         <Hours />
