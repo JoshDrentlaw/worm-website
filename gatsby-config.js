@@ -33,5 +33,6 @@ module.exports = {
     `gatsby-plugin-netlify`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-netlify-cms`,
+    'gatsby-plugin-netlify-identity-widget'
   ],
 }
