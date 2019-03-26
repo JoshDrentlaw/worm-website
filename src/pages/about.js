@@ -11,6 +11,7 @@ class About extends React.Component {
         return (
             <Layout>
                 <SEO title="About" />
+                
             </Layout>
         )
     }
