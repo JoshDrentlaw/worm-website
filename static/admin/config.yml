@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: git-gateway
   repo: JoshDrentlaw/worm-website
 
 media_folder: static/img
