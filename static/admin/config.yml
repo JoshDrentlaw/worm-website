@@ -1,9 +1,9 @@
 backend:
   name: git-gateway
   repo: JoshDrentlaw/worm-website
+  branch: master
 
-media_folder: static/img
-public_folder: /img
+media_folder: static/assets
 
 collections:
   - name: hours
@@ -11,10 +11,10 @@ collections:
     folder: content/hours
     create: true
     fields:
-      - { label: Sunday, name: sunday, widget: string }
-      - { label: Monday, name: monday, widget: string }
-      - { label: Tuesday, name: tuesday, widget: string }
-      - { label: Wednesday, name: wednesday, widget: string }
-      - { label: Thursday, name: thursday, widget: string }
-      - { label: Friday, name: friday, widget: string }
-      - { label: Saturday, name: saturday, widget: string }
+      - { label: Sunday, name: sunday, widget: string, default: "Closed" }
+      - { label: Monday, name: monday, widget: string, default: "9:00am-12:00pm" }
+      - { label: Tuesday, name: tuesday, widget: string, default: "9:00am-12:00pm" }
+      - { label: Wednesday, name: wednesday, widget: string, default: "9:00am-12:00pm" }
+      - { label: Thursday, name: thursday, widget: string, default: "9:00am-12:00pm" }
+      - { label: Friday, name: friday, widget: string, default: "9:00am-12:00pm" }
+      - { label: Saturday, name: saturday, widget: string, default: "Closed" }
