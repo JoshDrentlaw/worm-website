@@ -11,6 +11,7 @@ collections:
     folder: content/hours
     create: true
     fields:
+      - { label: Title, name: title, widget: string, default: "New Hours" }
       - { label: Sunday, name: sunday, widget: string, default: "Closed" }
       - { label: Monday, name: monday, widget: string, default: "9:00am-12:00pm" }
       - { label: Tuesday, name: tuesday, widget: string, default: "9:00am-12:00pm" }
