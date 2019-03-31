@@ -1,5 +1,5 @@
 ---
-title: New Hours
+title: Hours
 sunday: Closed
 monday: '9:00am-12:00pm'
 tuesday: '9:00am-4:00pm'
