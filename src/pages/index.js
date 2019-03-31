@@ -13,7 +13,7 @@ const Company = styled.h1`
     text-shadow: 0 0 1px black;
 `
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
     <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <Company>Alcaraz<br />Worms and Compost</Company>
