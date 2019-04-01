@@ -17,7 +17,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/hours`,
-        name: "markdown-pages",
+        name: "hours",
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/faq`,
+        name: "faq",
       },
     },
     `gatsby-transformer-remark`,
