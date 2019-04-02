@@ -31,4 +31,6 @@ title: faq
     * Water-Retentive + Well Draining \[check with source, Sandy soils do not retain water while clay soil blocks water from draining, organic material helps balance\]
     * Nutrient Dense! As plants grow they uptake nutrients from deep within the soil from their roots and use it to create fruit. By composting food scraps, you are effectively reintroducing vital nutrients and feeding the soil.
 * How do I separate the worms from the castings?
+    * Placeholder
 * How do I apply this nutrient rich fertilizer to my plants and into my garden?
+    * Placeholder
