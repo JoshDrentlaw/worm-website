@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 import SEO from '../components/seo';
-import Layout, { media } from '../components/layout';
+import Layout from '../components/layout';
 
 const Faq = styled.div`
     ${tw`mt-5`}
