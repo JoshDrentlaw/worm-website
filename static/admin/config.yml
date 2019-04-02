@@ -19,3 +19,11 @@ collections:
       - { label: Thursday, name: thursday, widget: string, default: "9:00am-12:00pm" }
       - { label: Friday, name: friday, widget: string, default: "9:00am-12:00pm" }
       - { label: Saturday, name: saturday, widget: string, default: "Closed" }
+  
+  - name: faq
+    label: FAQ
+    folder: content/faq
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string, default: "FAQ" }
+      - { label: Body, name: body, widget: markdown }
