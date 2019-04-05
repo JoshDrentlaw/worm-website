@@ -130,8 +130,7 @@ class Form extends React.Component {
                         <label htmlFor="delivery" className="font-semibold ml-1 mr-3">Delivery</label>
                     </div>
                     <div className="mb-4">
-                        <input type="radio" className="" id="pickup" name="shipment" defaultValue="
-                        +" defaultChecked required />-
+                        <input type="radio" className="" id="pickup" name="shipment" defaultValue={pickup} defaultChecked required />-
                         <label htmlFor="pickup" className="font-semibold ml-1">Pickup</label>
                     </div>
                 </FormGroup>

@@ -2,22 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* BASE */
-
-/* LAYOUT */
-
-#facebook-i {
-  position: relative;
-  left: 5px;
-  top: 5px;
-}
-
-/* MODULES */
-
-/* STATE */
-
-/* THEME */
-
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   main {
