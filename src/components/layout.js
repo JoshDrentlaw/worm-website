@@ -14,7 +14,7 @@ import tw from "tailwind.macro"
 
 import Header from "./header"
 import Footer from "./footer"
-import "./layout.css"
+import "../global.css"
 
 const sizes = {
     desktop: 992,
@@ -33,9 +33,21 @@ export const media = Object.keys(sizes).reduce((acc, label) => {
 }, {})
 
 const Container = styled.main`
-  ${tw`flex flex-col mx-auto relative w-3/5 text-primary`};
+  ${tw`flex flex-col mx-auto relative w-portrait text-primary`};
 
-  ${media.desktop(tw`w-2/5`)}
+  ${media.landscape(tw`w-landscape`)}
+
+  ${media.tablet(tw`w-tablet`)}
+
+  ${media.desktop(tw`w-desktop`)}
+
+  & i {
+    ${media.desktop(tw`text-lg-i`)}
+  }
+
+  & .navlink {
+    ${media.desktop(tw`text-2xl`)}
+  }
 `
 
 const Layout = ({ children }) => (

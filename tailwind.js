@@ -269,6 +269,8 @@ module.exports = {
     '3xl': '1.875rem',  // 30px
     '4xl': '2.25rem',   // 36px
     '5xl': '3rem',      // 48px
+    'sm-i': '30px',
+    'lg-i': '40px',
   },
 
 
@@ -517,6 +519,12 @@ module.exports = {
     '5/6': '83.33333%',
     'full': '100%',
     'screen': '100vw',
+    'portrait': '65%',
+    'landscape': '70%',
+    'tablet': '60%',
+    'desktop': '35%',
+    'sm-social': '40px',
+    'lg-social': '50px',
   },
 
 
@@ -555,6 +563,8 @@ module.exports = {
     '64': '16rem',
     'full': '100%',
     'screen': '100vh',
+    'sm-social': '40px',
+    'lg-social': '50px',
   },
 
 
