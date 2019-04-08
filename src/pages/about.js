@@ -18,7 +18,7 @@ const Faq = styled.div`
         ${tw`p-3`}
 
         & > p {
-            ${tw`font-bold text-black text-xl`}
+            ${tw`font-bold text-black text-5xl`}
 
             ::before {
                 content: "+ "

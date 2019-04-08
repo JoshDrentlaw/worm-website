@@ -14,21 +14,21 @@ const FormGroup = styled.div`
 `
 
 const Header = styled.h2`
-    ${tw`text-3xl text-center mb-2`}
+    ${tw`text-7xl text-center mb-2`}
 `
 
 const FormInput = styled.input`
-    ${tw`border-2 border-black m-2 p-2 w-4/5`}
+    ${tw`border-2 border-black m-2 p-2 w-4/5 text-base`}
 `
 
 const UnitInput = styled(FormInput)`
-    ${tw`w-12`}
+    ${tw`w-8 text-base`}
 
     ${media.tablet(tw`w-16`)}
 `
 
 const UnitDesc = styled.small`
-    ${tw`text-black font-medium font-semibold`}
+    ${tw`text-black font-medium font-semibold text-3xl`}
 `
 
 const SmallInfo = styled.small`
@@ -130,16 +130,16 @@ class Form extends React.Component {
                         <label htmlFor="delivery" className="font-semibold ml-1 mr-3">Delivery</label>
                     </div>
                     <div className="mb-4">
-                        <input type="radio" className="" id="pickup" name="shipment" defaultValue={pickup} defaultChecked required />-
+                        <input type="radio" className="" id="pickup" name="shipment" defaultValue={pickup} defaultChecked required />
                         <label htmlFor="pickup" className="font-semibold ml-1">Pickup</label>
                     </div>
                 </FormGroup>
                 <FormGroup>
-                    <textarea className="p-2 mb-4 w-full block border-2 border-black" name="comment" rows="4" onChange={this.handleChange} placeholder="If you have any questions, concerns, or special instructions, let me know here."></textarea>
+                    <textarea className="p-2 mb-4 w-full block border-2 border-black leading-none" name="comment" rows="4" onChange={this.handleChange} placeholder="If you have any questions, concerns, or special instructions, let me know here."></textarea>
                 </FormGroup>
                 <FormGroup>
                     <label htmlFor="email" className="font-semibold">Email</label>
-                    <FormInput type="email" name="email" id="form-email" onChange={this.handleChange} aria-describedby="disclaimer" placeholder="Enter email" required />
+                    <FormInput type="email" name="email" id="form-email" className="py-px text-5xl" onChange={this.handleChange} aria-describedby="disclaimer" placeholder="Enter email" required />
                 </FormGroup>
                 <SmallInfo id="disclaimer">We'll never share your email with anyone else.</SmallInfo>
                 <button type="submit" className="block mx-auto bg-buy text-white p-2 rounded" onClick={this.validate}>Contact</button>

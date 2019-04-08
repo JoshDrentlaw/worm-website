@@ -1,3 +1,15 @@
 @tailwind preflight;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Naomis Hand';
+    src: url('./assets/fonts/NaomisHand-Regular.eot');
+    src: url('./assets/fonts/NaomisHand-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/NaomisHand-Regular.woff2') format('woff2'),
+        url('./assets/fonts/NaomisHand-Regular.woff') format('woff'),
+        url('./assets/fonts/NaomisHand-Regular.ttf') format('truetype'),
+        url('./assets/fonts/NaomisHand-Regular.svg#NaomisHand-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

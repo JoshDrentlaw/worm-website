@@ -34,6 +34,9 @@ export const media = Object.keys(sizes).reduce((acc, label) => {
 
 const Container = styled.main`
   ${tw`flex flex-col mx-auto relative w-portrait text-primary`};
+  font-family: 'Naomis Hand';
+  font-size: 4rem;
+  line-height: 0.75;
 
   ${media.landscape(tw`w-landscape`)}
 

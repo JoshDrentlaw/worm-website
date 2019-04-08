@@ -4,20 +4,38 @@ import React from "react"
 
 import styled from "styled-components"
 import tw from "tailwind.macro"
+import '../global.css'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTwitter, faInstagram, faFacebookF } from "@fortawesome/free-brands-svg-icons"
 
-const Nav = styled.nav`
-    ${tw`bg-light-brown p-2 sticky`}
+const Head = styled.header`
+    ${tw`bg-bg`}
+    font-family: 'Naomis Hand';
 `
 
-const Sidebar = styled.nav`
-    ${tw`flex flex-col`}
-    position: fixed;
+const Banner = styled.div`
+    ${tw`p-3 flex`}
+`
+
+const Company = styled.h1`
+    ${tw`text-left text-8xl text-bold`}
+    line-height: 0.5;
+    text-shadow: 0 0 1px black;
+`
+
+const Small = styled.p`
+    ${tw`font-medium text-4xl`}
+`
+
+const Nav = styled.nav`
+    ${tw`bg-light-brown px-2 py-px`}
+`
+
+const Sidebar = styled.div`
+    ${tw`flex flex-col relative w-lg-social`}
     top: 10px;
     left: 10px;
-    z-index: 100;
 `
 
 const SocialBtn = styled.button`
@@ -55,9 +73,15 @@ const FaIcon = styled(FontAwesomeIcon)`
 `
 
 const Header = ({ siteTitle }) => (
-    <Nav id="nav">
-        <Link className="font-bold text-left text-buy mb-2 no-underline" to="/">Home</Link>
-        <Link className="font-bold text-left text-buy mb-4 no-underline" to="/about/">About</Link>
+    <Head>
+        <Banner>
+            <img className="w-32 h-32 mr-2 bg-white" />
+            <Company>SoCal<br />Dirt Farm<Small>By Citlalli Jasmin Alcaraz Pina</Small></Company>
+        </Banner>
+        <Nav id="nav">
+            <Link className="font-bold text-left text-white text-5xl mr-4 no-underline" to="/">Home</Link>
+            <Link className="font-bold text-left text-white text-5xl no-underline" to="/about/">About</Link>
+        </Nav>
         <Sidebar>
             <SocialBtn id="facebook-btn"><SocialLink href="https://facebook.com" target="_blank" rel="noopener noreferrer">
                 <FaIcon icon={faFacebookF} id="facebook-i"></FaIcon>
@@ -69,8 +93,7 @@ const Header = ({ siteTitle }) => (
                 <FaIcon icon={faInstagram}></FaIcon>
             </SocialLink></SocialBtn>
         </Sidebar>
-    </Nav>
-    
+    </Head>
 )
 
 Header.propTypes = {
