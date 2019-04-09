@@ -31,7 +31,7 @@ const Hours = ({ data }) => {
                 <li className="border-b border-grey-dark py-2" id="wednesday">Wednesday: <span className="hours">{ data.allMarkdownRemark.edges[0].node.frontmatter.wednesday }</span></li>
                 <li className="border-b border-grey-dark py-2" id="thursday">Thursday: <span className="hours">{ data.allMarkdownRemark.edges[0].node.frontmatter.thursday }</span></li>
                 <li className="border-b border-grey-dark py-2" id="friday">Friday: <span className="hours">{ data.allMarkdownRemark.edges[0].node.frontmatter.friday }</span></li>
-                <li className="py-2" id="saturday">Saturday: <span className="hours"></span>{ data.allMarkdownRemark.edges[0].node.frontmatter.saturday }</li>
+                <li className="py-2" id="saturday">Saturday: <span className="hours">{ data.allMarkdownRemark.edges[0].node.frontmatter.saturday }</span></li>
             </ul>
         </Container>
     )

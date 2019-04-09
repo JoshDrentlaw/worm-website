@@ -13,6 +13,7 @@ import styled, { css } from "styled-components"
 import tw from "tailwind.macro"
 
 import Header from "./header"
+import LeftSidebar from './left-sidebar'
 import Footer from "./footer"
 import "../global.css"
 
@@ -32,17 +33,24 @@ export const media = Object.keys(sizes).reduce((acc, label) => {
     return acc
 }, {})
 
+const Body = styled.div`
+  ${tw`bg-bg`}
+  display: grid;
+  grid-template-columns: 1fr 2fr minmax(calc(0.5rem + 40px), 1fr);
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "header header header"
+    "left content ."
+    "left content ."
+    "footer footer footer"
+`
+
 const Container = styled.main`
-  ${tw`flex flex-col mx-auto relative w-portrait text-primary`};
+  ${tw`flex flex-col mx-auto relative text-primary`};
   font-family: 'Naomis Hand';
   font-size: 4rem;
   line-height: 0.75;
-
-  ${media.landscape(tw`w-landscape`)}
-
-  ${media.tablet(tw`w-tablet`)}
-
-  ${media.desktop(tw`w-desktop`)}
+  grid-area: content;
 
   & i {
     ${media.desktop(tw`text-lg-i`)}
@@ -65,13 +73,12 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div className="bg-bg">
-          <Container>{children}</Container>
-          <Footer />
-        </div>
-      </>
+      <Body>
+        <Header className="header" siteTitle={data.site.siteMetadata.title} />
+        <LeftSidebar />
+        <Container>{children}</Container>
+        <Footer />
+      </Body>
     )}
   />
 )
