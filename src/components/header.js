@@ -32,7 +32,7 @@ const Nav = styled.nav`
 const Header = ({ siteTitle }) => (
     <Head>
         <Banner>
-            <img className="w-32 h-32 mr-2 bg-white" />
+            <img src="https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/v1554858410/SoCal%20Earth%20Farm/logo.png" alt="Bag of compost" className="w-32 h-32 mr-2" />
             <Company>So Cal<br />Earth Farm<Small>By C. Alcaraz</Small></Company>
         </Banner>
         <Nav id="nav">
