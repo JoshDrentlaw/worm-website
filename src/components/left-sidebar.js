@@ -1,16 +1,19 @@
 import React from 'react'
 
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import tw from "tailwind.macro"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTwitter, faInstagram, faFacebookF } from "@fortawesome/free-brands-svg-icons"
 
-const Sidebar = styled.div`
-    ${tw`flex flex-col w-lg-social m-2 sticky`}
-    /* top: 10px;
-    left: 10px; */
+const Left = styled.div`
+    ${tw`flex flex-col w-lg-social m-2`}
     grid-area: left;
+`
+
+const SocialContainer = styled.div`
+    ${tw`sticky`}
+    top: 67px;
 `
 
 const SocialBtn = styled.button`
@@ -48,17 +51,19 @@ const FaIcon = styled(FontAwesomeIcon)`
 `
 
 const LeftSidebar = () => (
-    <Sidebar>
-        <SocialBtn id="facebook-btn"><SocialLink href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <FaIcon icon={faFacebookF} id="facebook-i"></FaIcon>
-        </SocialLink></SocialBtn>
-        <SocialBtn id="twitter-btn"><SocialLink href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <FaIcon icon={faTwitter}></FaIcon>
-        </SocialLink></SocialBtn>
-        <SocialBtn id="instagram-btn"><SocialLink href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <FaIcon icon={faInstagram}></FaIcon>
-        </SocialLink></SocialBtn>
-    </Sidebar>
+    <Left>
+        <SocialContainer>
+            <SocialBtn id="facebook-btn"><SocialLink href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <FaIcon icon={faFacebookF} id="facebook-i"></FaIcon>
+            </SocialLink></SocialBtn>
+            <SocialBtn id="twitter-btn"><SocialLink href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <FaIcon icon={faTwitter}></FaIcon>
+            </SocialLink></SocialBtn>
+            <SocialBtn id="instagram-btn"><SocialLink href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <FaIcon icon={faInstagram}></FaIcon>
+            </SocialLink></SocialBtn>
+        </SocialContainer>
+    </Left>
 )
 
 export default LeftSidebar
