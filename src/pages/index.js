@@ -9,7 +9,7 @@ import Form from "../components/form"
 import Hours from "../components/hours"
 
 const Emoji = styled.span`
-    ${tw`text-xl lg:text-3xl`}
+    ${tw`text-3xl`}
 `
 
 const IndexPage = () => (
