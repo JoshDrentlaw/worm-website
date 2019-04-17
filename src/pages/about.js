@@ -8,7 +8,7 @@ import SEO from '../components/seo';
 import Layout from '../components/layout';
 
 const Faq = styled.div`
-    ${tw`mt-5`}
+    ${tw`mt-5 mx-auto`}
 
     ul {
         ${tw`list-reset cursor-pointer select-none`}

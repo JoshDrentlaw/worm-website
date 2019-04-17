@@ -68,8 +68,7 @@ class Form extends React.Component {
             worms: 0,
             compost: 0,
             tea: 0,
-            delivery: false,
-            pickup: true,
+            shipment: false,
             comment: '',
             email: ''
         }
@@ -126,11 +125,11 @@ class Form extends React.Component {
                 <SmallInfo>FRESH compost tea. Feed your plants with naturally high nutrient liquid fertilizer.</SmallInfo>
                 <FormGroup>
                     <div className="mb-4">
-                        <input type="radio" className="" id="delivery" name="shipment" defaultValue={delivery} required />
+                        <input type="radio" className="" id="delivery" name="shipment" defaultValue={delivery} onChange={this.handleChange} required />
                         <label htmlFor="delivery" className="font-semibold ml-1 mr-3">Delivery</label>
                     </div>
                     <div className="mb-4">
-                        <input type="radio" className="" id="pickup" name="shipment" defaultValue={pickup} defaultChecked required />
+                        <input type="radio" className="" id="pickup" name="shipment" defaultValue={pickup} onChange={this.handleChange} defaultChecked required />
                         <label htmlFor="pickup" className="font-semibold ml-1">Pickup</label>
                     </div>
                 </FormGroup>

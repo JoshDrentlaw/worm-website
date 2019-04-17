@@ -32,7 +32,7 @@ const Body = styled.div`
   font-family: 'Naomis Hand';
   display: grid;
   grid-template-columns: minmax(calc(1rem + 40px), calc(1rem + 50px)) auto minmax(calc(1rem + 40px), calc(1rem + 50px));
-  grid-template-rows: auto auto minmax(auto, vh100) auto;
+  grid-template-rows: auto auto auto auto;
   grid-template-areas:
     "company company company"
     "nav nav nav"
@@ -41,7 +41,7 @@ const Body = styled.div`
 `
 
 const Container = styled.main`
-  ${tw`flex flex-col mx-auto relative text-primary z-0`};
+  ${tw`flex flex-col mx-auto relative text-primary z-0 lg:w-3/5`};
   grid-area: content;
   font-size: 4rem;
   line-height: 0.75;
