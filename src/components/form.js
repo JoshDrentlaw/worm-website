@@ -50,12 +50,6 @@ const Zipup = css `
     animation: ${zipup} 1s cubic-bezier(0.075, 0.82, 0.165, 1) once;
 `
 
-const encode = (data) => {
-    return Object.keys(data)
-        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-        .join('&');
-}
-
 const MainForm = (props) => (
     <Container id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="contact" />
@@ -105,8 +99,8 @@ class Form extends React.Component {
         super(props);
 
         this.validate = this.validate.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.nextStep = this.nextStep.bind(this);
 
         this.state = {
             worms: 0,
@@ -120,21 +114,23 @@ class Form extends React.Component {
     }
 
     validate(e) {
-        const form = e.target.parentElement;
+        /* const form = e.target.parentElement;
         if (form.checkValidity() === false) {
             e.preventDefault();
             e.stopPropagation();
             return;
-        }
+        } */
+        e.preventDefault();
+        this.nextStep();
     }
 
     handleChange(e) {
         this.setState({ [e.target.name]: e.target.value });
     }
 
-    /* nextStep() {
-        this.setState({step: step++})
-    } */
+    nextStep() {
+        this.setState({step: this.state.step + 1})
+    }
 
     render() {
         const { worms, compost, tea, delivery, pickup } = this.state;
