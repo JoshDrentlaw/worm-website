@@ -1,22 +1,6 @@
 import React from "react"
-import styled, { css, keyframes } from "styled-components"
 
 import FormDetails from './form-details'
-
-// Form submission animations
-const zipup = keyframes`
-    from {
-        overflow: hidden;
-        height: 100%;
-    }
-
-    to {
-        height: 0;
-    }
-`
-const Zipup = css `
-    animation: ${zipup} 1s cubic-bezier(0.075, 0.82, 0.165, 1) once;
-`
 
 const encode = (data) => {
     return Object.keys(data)
@@ -24,9 +8,13 @@ const encode = (data) => {
         .join("&");
 }
 
+const formRef = React.createRef();
+
 class Form extends React.Component {
     constructor(props) {
         super(props);
+
+        const form = undefined;
 
         this.state = {
             worms: 0,
@@ -38,6 +26,11 @@ class Form extends React.Component {
             step: 1
         }
     }
+
+    componentDidMount(form) {
+        form = formRef.current;
+    }
+    
 
     validate = (e) => {
         /* const form = e.target.parentElement;
@@ -56,13 +49,15 @@ class Form extends React.Component {
         this.setState({step: this.state.step + 1})
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = (e, form) => {
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: encode({ "form-name": "contact", ...this.state })
         })
-            .then(() => alert("Success!"))
+            .then(() => {
+                console.log(form);
+            })
             .catch(error => alert(error));
 
         e.preventDefault();
@@ -75,7 +70,8 @@ class Form extends React.Component {
         switch (this.state.step) {
             case 1:
                 return (
-                    <FormDetails 
+                    <FormDetails
+                        ref={formRef}
                         values={values}
                         handleChange={this.handleChange}
                         handleSubmit={this.handleSubmit}
@@ -83,7 +79,7 @@ class Form extends React.Component {
                     />
                 )
             case 2:
-                return (<h2>Submitted</h2>)
+                return (<h2 className="text-center my-16">Thank you for your interest!</h2>)
             default:
                 return (
                     <FormDetails 

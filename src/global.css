@@ -13,3 +13,18 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@keyframes zipup {
+    from {
+        overflow: hidden;
+        height: 100%;
+    }
+
+    to {
+        height: 0;
+    }
+}
+
+.Zipup {
+    animation: zipup 1s cubic-bezier(0.075, 0.82, 0.165, 1) once;
+}

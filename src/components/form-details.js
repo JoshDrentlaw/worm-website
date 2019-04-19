@@ -1,5 +1,5 @@
 import React from "react"
-import styled, { css, keyframes } from "styled-components"
+import styled from "styled-components"
 import tw from "tailwind.macro"
 import { media } from "./layout"
 
@@ -35,8 +35,8 @@ const SmallInfo = styled.small`
     ${tw`block mb-8 text-center text-black`}
 `
 
-const FormDetails = (props) => (
-    <Container id="contact-form" name="contact" method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={props.handleSubmit}>
+const FormDetails = React.forwardRef((props, ref) => (
+    <Container ref={ref} name="contact" method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={props.handleSubmit}>
         <input type="hidden" name="form-name" value="contact" />
         <Header>Want to get in touch?</Header>
         <FormGroup>
@@ -77,6 +77,6 @@ const FormDetails = (props) => (
         <SmallInfo id="disclaimer">We'll never share your email with anyone else.</SmallInfo>
         <button type="submit" className="block mx-auto bg-buy text-white p-2 rounded" onClick={props.validate}>Contact</button>
     </Container>
-)
+))
 
 export default FormDetails
