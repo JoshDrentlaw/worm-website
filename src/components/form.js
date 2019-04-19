@@ -44,12 +44,12 @@ class Form extends React.Component {
     }
 
     validate(e) {
-        const form = e.target.parentElement;
+        /* const form = e.target.parentElement;
         if (form.checkValidity() === false) {
             e.preventDefault();
             e.stopPropagation();
             return;
-        }
+        } */
     }
 
     handleChange(e) {
@@ -61,6 +61,7 @@ class Form extends React.Component {
     }
 
     handleSubmit = e => {
+        e.preventDefault();
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -69,7 +70,6 @@ class Form extends React.Component {
             .then(() => alert("Success!"))
             .catch(error => alert(error));
 
-        e.preventDefault();
         this.nextStep();
     };
 

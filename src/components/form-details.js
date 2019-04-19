@@ -36,7 +36,7 @@ const SmallInfo = styled.small`
 `
 
 const FormDetails = (props) => (
-    <Container id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={props.handleSubmit}>
+    <Container id="contact-form" name="contact" method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={props.handleSubmit}>
         <input type="hidden" name="form-name" value="contact" />
         <Header>Want to get in touch?</Header>
         <FormGroup>
