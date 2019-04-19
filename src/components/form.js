@@ -28,10 +28,6 @@ class Form extends React.Component {
     constructor(props) {
         super(props);
 
-        this.validate = this.validate.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.nextStep = this.nextStep.bind(this);
-
         this.state = {
             worms: 0,
             compost: 0,
@@ -43,7 +39,7 @@ class Form extends React.Component {
         }
     }
 
-    validate(e) {
+    validate = (e) => {
         /* const form = e.target.parentElement;
         if (form.checkValidity() === false) {
             e.preventDefault();
@@ -52,16 +48,15 @@ class Form extends React.Component {
         } */
     }
 
-    handleChange(e) {
+    handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
     }
 
-    nextStep() {
+    nextStep = () => {
         this.setState({step: this.state.step + 1})
     }
 
-    handleSubmit = e => {
-        e.preventDefault();
+    handleSubmit = (e) => {
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -70,6 +65,7 @@ class Form extends React.Component {
             .then(() => alert("Success!"))
             .catch(error => alert(error));
 
+        e.preventDefault();
         this.nextStep();
     };
 
@@ -82,6 +78,7 @@ class Form extends React.Component {
                     <FormDetails 
                         values={values}
                         handleChange={this.handleChange}
+                        handleSubmit={this.handleSubmit}
                         validate={this.validate}
                     />
                 )
