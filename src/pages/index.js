@@ -17,7 +17,7 @@ const IndexPage = () => (
                 Start your own compost system run by Worm Power!
                 <br />
                 <StarEmoji />
-                <img src="https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/c_scale,w_150/c_crop,g_custom/v1555129916/SoCal%20Earth%20Farm/wormm.png" alt="Cute hand drawn Earth Worm" />
+                <img id="worm" src="https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/c_scale,w_150/c_crop,g_custom/v1555129916/SoCal%20Earth%20Farm/wormm.png" alt="Cute hand drawn Earth Worm" />
                 <StarEmoji />
             </p>
         </section>

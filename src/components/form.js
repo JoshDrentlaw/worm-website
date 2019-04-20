@@ -54,13 +54,11 @@ class Form extends React.Component {
             .catch(error => alert(error));
         e.preventDefault();
         this.toggleSubmit();
-        window.setTimeout(() => {
-            this.scrollUp();
-        }, 400);
+        this.scrollUp();
     };
 
     scrollUp = () => {
-        document.querySelector('#submit').scrollIntoView({
+        document.querySelector('#worm').scrollIntoView({
             behavior: 'smooth'
         });
     }
