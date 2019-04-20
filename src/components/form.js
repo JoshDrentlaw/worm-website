@@ -1,8 +1,11 @@
 import React from "react"
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import smoothscroll from 'smoothscroll-polyfill'
 
 import FormDetails from './form-details'
 import '../global.css'
+
+smoothscroll.polyfill();
 
 const encode = (data) => {
     return Object.keys(data)
@@ -52,9 +55,18 @@ class Form extends React.Component {
                 console.log('success!');
             })
             .catch(error => alert(error));
-        this.toggleSubmit();
         e.preventDefault();
+        this.toggleSubmit();
+        window.setTimeout(() => {
+            this.scrollUp();
+        }, 400);
     };
+
+    scrollUp = () => {
+        document.querySelector('#submit').scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
 
     render() {
         const { worms, compost, tea, delivery, pickup, submitted } = this.state;
@@ -63,7 +75,7 @@ class Form extends React.Component {
             <ReactCSSTransitionGroup
                 transitionName="zipup"
                 transitionEnterTimeout={1200}
-                transitionLeaveTimeout={500}
+                transitionLeaveTimeout={800}
             >
                 {
                     submitted ?
@@ -79,7 +91,8 @@ class Form extends React.Component {
                     submitted ?
                     <h2
                         key={1}
-                        className="text-center pt-auto"
+                        id="submit"
+                        className="text-center my-32"
                     >Thank you for your interest!</h2>
                     : null
                 }

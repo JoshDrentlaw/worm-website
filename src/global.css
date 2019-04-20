@@ -14,6 +14,10 @@
     font-style: normal;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .zipup-enter {
     opacity: 0.1;
 }
@@ -33,5 +37,5 @@
     opacity: 0;
     transform-origin: top;
     transform: scaleY(0.1);
-    transition: all 500ms ease-in;
+    transition: all 800ms ease-in;
 }
