@@ -14,17 +14,24 @@
     font-style: normal;
 }
 
-@keyframes zipup {
-    from {
-        overflow: hidden;
-        height: 100%;
-    }
-
-    to {
-        height: 0;
-    }
+.zipup-enter {
+    opacity: 0.1;
 }
 
-.Zipup {
-    animation: zipup 1s cubic-bezier(0.075, 0.82, 0.165, 1) once;
+.zipup-enter.zipup-enter-active {
+    opacity: 1;
+    transition: opacity 1200ms ease-in;
+}
+
+.zipup-leave {
+    opacity: 1;
+    transform-origin: top;
+    transform: scaleY(1)
+}
+
+.zipup-leave.zipup-leave-active {
+    opacity: 0;
+    transform-origin: top;
+    transform: scaleY(0.1);
+    transition: all 500ms ease-in;
 }

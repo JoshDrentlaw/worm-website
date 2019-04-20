@@ -1,6 +1,8 @@
 import React from "react"
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import FormDetails from './form-details'
+import '../global.css'
 
 const encode = (data) => {
     return Object.keys(data)
@@ -8,13 +10,9 @@ const encode = (data) => {
         .join("&");
 }
 
-const formRef = React.createRef();
-
 class Form extends React.Component {
     constructor(props) {
         super(props);
-
-        const form = undefined;
 
         this.state = {
             worms: 0,
@@ -23,14 +21,13 @@ class Form extends React.Component {
             shipment: false,
             comment: '',
             email: '',
-            step: 1
+            submitted: false
         }
     }
-
-    componentDidMount(form) {
-        form = formRef.current;
-    }
     
+    toggleSubmit = () => {
+        this.setState({ submitted: !this.state.submitted })
+    }
 
     validate = (e) => {
         /* const form = e.target.parentElement;
@@ -45,51 +42,50 @@ class Form extends React.Component {
         this.setState({ [e.target.name]: e.target.value });
     }
 
-    nextStep = () => {
-        this.setState({step: this.state.step + 1})
-    }
-
-    handleSubmit = (e, form) => {
+    handleSubmit = (e) => {
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: encode({ "form-name": "contact", ...this.state })
         })
             .then(() => {
-                console.log(form);
+                console.log('success!');
             })
             .catch(error => alert(error));
-
+        this.toggleSubmit();
         e.preventDefault();
-        this.nextStep();
     };
 
     render() {
-        const { worms, compost, tea, delivery, pickup } = this.state;
+        const { worms, compost, tea, delivery, pickup, submitted } = this.state;
         const values = { worms, compost, tea, delivery, pickup };
-        switch (this.state.step) {
-            case 1:
-                return (
+        return (
+            <ReactCSSTransitionGroup
+                transitionName="zipup"
+                transitionEnterTimeout={1200}
+                transitionLeaveTimeout={500}
+            >
+                {
+                    submitted ?
+                    null :
                     <FormDetails
-                        ref={formRef}
                         values={values}
                         handleChange={this.handleChange}
                         handleSubmit={this.handleSubmit}
                         validate={this.validate}
                     />
-                )
-            case 2:
-                return (<h2 className="text-center my-16">Thank you for your interest!</h2>)
-            default:
-                return (
-                    <FormDetails 
-                        values={values}
-                        handleChange={this.handleChange}
-                        handleSubmit={this.handleSubmit}
-                        validate={this.validate}
-                    />
-                )
-        }
+                }
+                {
+                    submitted ?
+                    <h2
+                        key={1}
+                        className="text-center pt-auto"
+                    >Thank you for your interest!</h2>
+                    : null
+                }
+                
+            </ReactCSSTransitionGroup>
+        )
     }
 }
 
