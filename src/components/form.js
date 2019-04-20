@@ -1,11 +1,8 @@
 import React from "react"
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import smoothscroll from 'smoothscroll-polyfill'
 
 import FormDetails from './form-details'
 import '../global.css'
-
-smoothscroll.polyfill();
 
 const encode = (data) => {
     return Object.keys(data)
