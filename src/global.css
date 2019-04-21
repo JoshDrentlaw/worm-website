@@ -30,9 +30,9 @@ html {
     scroll-behavior: smooth;
 }
 
-/* body {
-    width: auto;
-} */
+body {
+    width: 100%;
+}
 
 input,
 textarea,

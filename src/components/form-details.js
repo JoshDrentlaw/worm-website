@@ -19,7 +19,7 @@ const RadioGroup = styled(FormGroup)`
 `
 
 const Header = styled.h2`
-    ${tw`text-9xl text-center mb-2 font-hand leading-hand`}
+    ${tw`text-7xl text-center mb-2 font-hand leading-hand`}
 `
 
 const Label = styled.label`
