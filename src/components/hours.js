@@ -18,7 +18,8 @@ const Hours = ({ data }) => {
     }
 
     const getScreenSize = () => {
-        if (window.outerWidth <= 420) {
+        const isClient = typeof window !== 'undefined';
+        if (isClient && window.outerWidth <= 420) {
             return (<br />);
         }
         else return null 
