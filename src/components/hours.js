@@ -7,10 +7,6 @@ import tw from "tailwind.macro"
 const Container = styled.section`
     ${tw`mt-4 border border-grey-dark rounded text-center`};
     background-color: rgba(255, 255, 255, 0.3);
-
-    .hours {
-        ${tw`text-4xl`}
-    }
 `
 
 const Hours = ({ data }) => {
@@ -23,9 +19,9 @@ const Hours = ({ data }) => {
 
     return (
         <Container id="hours">
-            <h2 className="border-b border-grey-dark py-2">Hours for Delivery</h2>
-            <ul className="list-reset" id="weekdays">
-                <li className="border-b border-grey-dark py-2" id="sunday">Sunday: <span className="hours">{ data.allMarkdownRemark.edges[0].node.frontmatter.sunday }</span></li>
+            <h2 className="border-b border-grey-dark font-hand text-9xl leading-hand pb-6">Hours for Delivery</h2>
+            <ul className="list-reset text-2xl" id="weekdays">
+                <li className="border-b border-grey-dark py-2" id="sunday">Sunday: <span>{ data.allMarkdownRemark.edges[0].node.frontmatter.sunday }</span></li>
                 <li className="border-b border-grey-dark py-2" id="monday">Monday: <span className="hours">{ data.allMarkdownRemark.edges[0].node.frontmatter.monday }</span></li>
                 <li className="border-b border-grey-dark py-2" id="tuesday">Tuesday: <span className="hours">{ data.allMarkdownRemark.edges[0].node.frontmatter.tuesday }</span></li>
                 <li className="border-b border-grey-dark py-2" id="wednesday">Wednesday: <span className="hours">{ data.allMarkdownRemark.edges[0].node.frontmatter.wednesday }</span></li>

@@ -9,7 +9,7 @@ const Banner = styled.div`
 `
 
 const CompanyContainer = styled.h1`
-    ${tw`text-left text-8xl text-bold`}
+    ${tw`text-left text-8xl text-bold font-hand`}
     line-height: 0.5;
     text-shadow: 0 0 1px black;
 `

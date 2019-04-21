@@ -15,7 +15,11 @@ const FormGroup = styled.div`
 `
 
 const Header = styled.h2`
-    ${tw`text-7xl text-center mb-2`}
+    ${tw`text-9xl text-center mb-2 font-hand leading-hand`}
+`
+
+const Label = styled.label`
+    ${tw`font-semibold font-hand text-6xl leading-hand`}
 `
 
 const FormInput = styled.input`
@@ -29,11 +33,11 @@ const UnitInput = styled(FormInput)`
 `
 
 const UnitDesc = styled.small`
-    ${tw`text-black font-medium font-semibold text-3xl`}
+    ${tw`text-black font-medium font-semibold text-2xl`}
 `
 
 const SmallInfo = styled.small`
-    ${tw`block mb-8 text-center text-black`}
+    ${tw`block mb-8 text-center text-black text-base`}
 `
 
 const FormDetails = (props) => (
@@ -41,42 +45,42 @@ const FormDetails = (props) => (
         <input type="hidden" name="form-name" value="contact" />
         <Header>Want to get in touch?</Header>
         <FormGroup>
-            <label htmlFor="worm-count" className="font-semibold">Worms</label>
+            <Label htmlFor="worm-count">Worms</Label>
             <UnitInput type="number" min="0" step="1" defaultValue={props.values.worms} onChange={props.handleChange} name="worms" className="num-input" id="worm-count" aria-describedby="worms-uom" required />
             <UnitDesc id="worms-uom">($10 per lb.)</UnitDesc>
         </FormGroup>
         <SmallInfo>Every pound contains: Adult Earthworms, Juvenile Earthworms, Egg Cases, and Compost!</SmallInfo>
         <FormGroup>
-            <label htmlFor="compost-count" className="font-semibold">Vermicompost</label>
+            <Label htmlFor="compost-count">Vermicompost</Label>
             <UnitInput type="number" min="0" step="10" defaultValue={props.values.compost} onChange={props.handleChange} name="compost" className="num-input" id="compost-count" aria-describedby="compost-uom" required />
             <UnitDesc id="compost-uom">($50 per 10 lb.)</UnitDesc>
         </FormGroup>
         <SmallInfo>Rich black compost castings. Some worms may be included!</SmallInfo>
         <FormGroup>
-            <label htmlFor="compost-count" className="font-semibold">Compost Tea</label>
+            <Label htmlFor="compost-count">Compost Tea</Label>
             <UnitInput type="number" min="0" step="5" defaultValue={props.values.tea} onChange={props.handleChange} name="tea" className="num-input" id="tea-count" aria-describedby="tea-uom" required />
             <UnitDesc id="tea-uom">($25 per 5 gal.)</UnitDesc>
         </FormGroup>
         <SmallInfo>FRESH compost tea. Feed your plants with naturally high nutrient liquid fertilizer.</SmallInfo>
         <FormGroup>
-            <div className="mb-4">
+            <FormGroup className="mb-4 flex-row">
                 <input type="radio" className="" id="delivery" name="shipment" defaultValue={props.values.delivery} onChange={props.handleChange} required />
-                <label htmlFor="delivery" className="font-semibold ml-1 mr-3">Delivery</label>
-            </div>
-            <div className="mb-4">
+                <Label htmlFor="delivery" className="font-semibold ml-1 mr-3">Delivery</Label>
+            </FormGroup>
+            <FormGroup className="mb-4 flex-row">
                 <input type="radio" className="" id="pickup" name="shipment" defaultValue={props.values.pickup} onChange={props.handleChange} defaultChecked required />
-                <label htmlFor="pickup" className="font-semibold ml-1">Pickup</label>
-            </div>
+                <Label htmlFor="pickup" className="font-semibold ml-1">Pickup</Label>
+            </FormGroup>
         </FormGroup>
         <FormGroup>
-            <textarea className="p-2 mb-4 w-full block border-2 border-black leading-none" name="comment" rows="4" onChange={props.handleChange} placeholder="If you have any questions, concerns, or special instructions, let me know here."></textarea>
+            <textarea className="p-2 mb-4 w-full block border-2 border-black leading-none text-xl" name="comment" rows="4" onChange={props.handleChange} placeholder="If you have any questions, concerns, or special instructions, let me know here."></textarea>
         </FormGroup>
         <FormGroup>
-            <label htmlFor="email" className="font-semibold">Email</label>
-            <FormInput type="email" name="email" id="form-email" className="py-px text-5xl" onChange={props.handleChange} aria-describedby="disclaimer" placeholder="Enter email" required />
+            <Label htmlFor="email">Email</Label>
+            <FormInput type="email" name="email" id="form-email" className="py-px text-xl" onChange={props.handleChange} aria-describedby="disclaimer" placeholder="Enter email" required />
         </FormGroup>
         <SmallInfo id="disclaimer">We'll never share your email with anyone else.</SmallInfo>
-        <button type="submit" className="block mx-auto bg-buy text-white p-2 rounded" onClick={props.validate}>Contact</button>
+        <button type="submit" className="block mx-auto bg-buy text-white p-2 rounded text-3xl" onClick={props.validate}>Contact</button>
     </Container>
 )
 

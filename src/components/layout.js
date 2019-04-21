@@ -28,8 +28,7 @@ export const media = Object.keys(sizes).reduce((acc, label) => {
 }, {})
 
 const Body = styled.div`
-  ${tw`bg-bg relative`}
-  font-family: 'Naomis Hand';
+  ${tw`bg-bg relative font-cafe`}
   display: grid;
   grid-template-columns: minmax(calc(1rem + 40px), calc(1rem + 50px)) auto minmax(calc(1rem + 40px), calc(1rem + 50px));
   grid-template-rows: auto auto auto auto;
@@ -43,8 +42,6 @@ const Body = styled.div`
 const Container = styled.main`
   ${tw`flex flex-col mx-auto relative text-primary z-0 lg:w-3/5`};
   grid-area: content;
-  font-size: 4rem;
-  line-height: 0.75;
 
   & i {
     ${media.desktop(tw`text-lg-i`)}

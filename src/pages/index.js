@@ -13,7 +13,7 @@ const IndexPage = () => (
     <Layout>
         <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
         <section id="pitch-ctn" className="my-4">
-            <p id="pitch" className="text-center text-6xl leading-none">
+            <p id="pitch" className="text-center text-6xl leading-none font-hand">
                 Start your own compost system run by Worm Power!
                 <br />
                 <StarEmoji />

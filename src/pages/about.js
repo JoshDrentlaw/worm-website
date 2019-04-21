@@ -8,8 +8,9 @@ import SEO from '../components/seo';
 import Layout from '../components/layout';
 
 const Faq = styled.div`
-    ${tw`mt-5 mx-auto`}
+    ${tw`mt-5 lg:w-full text-xl`}
 
+    /* Whole list */
     ul {
         ${tw`list-reset cursor-pointer select-none`}
     }
@@ -17,8 +18,9 @@ const Faq = styled.div`
     & > ul > li {
         ${tw`p-3`}
 
+        /* Question */
         & > p {
-            ${tw`font-bold text-black text-5xl`}
+            ${tw`font-bold text-black`}
 
             ::before {
                 content: "+ "
@@ -28,6 +30,7 @@ const Faq = styled.div`
         & > ul {
             ${tw`hidden overflow-hidden p-5`}
 
+            /* Answer */
             & > li {
                 ${tw`py-2`}
 
@@ -35,6 +38,7 @@ const Faq = styled.div`
                     ${tw`font-bold mb-2`}
                 }
 
+                /* Inner bullet */
                 & > ul > li {
                     ${tw`py-2 pl-2`}
                 }
