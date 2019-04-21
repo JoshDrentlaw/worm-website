@@ -19,7 +19,7 @@ const Hours = ({ data }) => {
 
     return (
         <Container id="hours">
-            <h2 className="border-b border-grey-dark font-hand text-9xl leading-hand pb-6">Hours for Delivery</h2>
+            <h2 className="border-b border-grey-dark font-hand text-9xl leading-hand p-4 pb-6">Hours for Delivery</h2>
             <ul className="list-reset text-2xl" id="weekdays">
                 <li className="border-b border-grey-dark py-2" id="sunday">Sunday: <span>{ data.allMarkdownRemark.edges[0].node.frontmatter.sunday }</span></li>
                 <li className="border-b border-grey-dark py-2" id="monday">Monday: <span className="hours">{ data.allMarkdownRemark.edges[0].node.frontmatter.monday }</span></li>

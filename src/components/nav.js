@@ -5,7 +5,7 @@ import styled from "styled-components"
 import tw from "tailwind.macro"
 
 const NavContainer = styled.nav`
-    ${tw`bg-light-brown px-2 py-px sticky z-10 font-bold text-left text-white text-3xl`}
+    ${tw`bg-light-brown px-2 py-3 sticky z-10 font-bold text-left text-white text-3xl`}
     top: 0;
     grid-area: nav;
 

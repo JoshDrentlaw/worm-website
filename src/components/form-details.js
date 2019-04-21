@@ -14,6 +14,10 @@ const FormGroup = styled.div`
     ${media.tablet(tw`flex-row`)}
 `
 
+const RadioGroup = styled(FormGroup)`
+    ${tw`flex-row mb-4`}
+`
+
 const Header = styled.h2`
     ${tw`text-9xl text-center mb-2 font-hand leading-hand`}
 `
@@ -24,6 +28,10 @@ const Label = styled.label`
 
 const FormInput = styled.input`
     ${tw`border-2 border-black m-2 p-2 w-4/5 text-base`}
+`
+
+const EmailInput = styled(FormInput)`
+    ${tw`text-xl`}
 `
 
 const UnitInput = styled(FormInput)`
@@ -43,7 +51,7 @@ const SmallInfo = styled.small`
 const FormDetails = (props) => (
     <Container key={0} name="contact" method="POST" action="/" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={props.handleSubmit}>
         <input type="hidden" name="form-name" value="contact" />
-        <Header>Want to get in touch?</Header>
+        <Header>Want to get started?</Header>
         <FormGroup>
             <Label htmlFor="worm-count">Worms</Label>
             <UnitInput type="number" min="0" step="1" defaultValue={props.values.worms} onChange={props.handleChange} name="worms" className="num-input" id="worm-count" aria-describedby="worms-uom" required />
@@ -63,21 +71,21 @@ const FormDetails = (props) => (
         </FormGroup>
         <SmallInfo>FRESH compost tea. Feed your plants with naturally high nutrient liquid fertilizer.</SmallInfo>
         <FormGroup>
-            <FormGroup className="mb-4 flex-row">
-                <input type="radio" className="" id="delivery" name="shipment" defaultValue={props.values.delivery} onChange={props.handleChange} required />
-                <Label htmlFor="delivery" className="font-semibold ml-1 mr-3">Delivery</Label>
-            </FormGroup>
-            <FormGroup className="mb-4 flex-row">
-                <input type="radio" className="" id="pickup" name="shipment" defaultValue={props.values.pickup} onChange={props.handleChange} defaultChecked required />
-                <Label htmlFor="pickup" className="font-semibold ml-1">Pickup</Label>
-            </FormGroup>
+            <RadioGroup>
+                <input type="radio" id="delivery" name="shipment" defaultValue={props.values.delivery} onChange={props.handleChange} required />
+                <Label htmlFor="delivery" className="ml-1 mr-3">Delivery</Label>
+            </RadioGroup>
+            <RadioGroup>
+                <input type="radio" id="pickup" name="shipment" defaultValue={props.values.pickup} onChange={props.handleChange} defaultChecked required />
+                <Label htmlFor="pickup" className="ml-1">Pickup</Label>
+            </RadioGroup>
         </FormGroup>
         <FormGroup>
             <textarea className="p-2 mb-4 w-full block border-2 border-black leading-none text-xl" name="comment" rows="4" onChange={props.handleChange} placeholder="If you have any questions, concerns, or special instructions, let me know here."></textarea>
         </FormGroup>
         <FormGroup>
             <Label htmlFor="email">Email</Label>
-            <FormInput type="email" name="email" id="form-email" className="py-px text-xl" onChange={props.handleChange} aria-describedby="disclaimer" placeholder="Enter email" required />
+            <EmailInput type="email" name="email" id="form-email" onChange={props.handleChange} aria-describedby="disclaimer" placeholder="Enter email" required />
         </FormGroup>
         <SmallInfo id="disclaimer">We'll never share your email with anyone else.</SmallInfo>
         <button type="submit" className="block mx-auto bg-buy text-white p-2 rounded text-3xl" onClick={props.validate}>Contact</button>
