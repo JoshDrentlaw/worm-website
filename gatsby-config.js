@@ -39,7 +39,7 @@ module.exports = {
         background_color: `#5e4c3e`,
         theme_color: `#5e4c3e`,
         display: `minimal-ui`,
-        icon: `src/assets/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/favicon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-netlify`,

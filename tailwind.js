@@ -46,13 +46,13 @@ View the full documentation at https://tailwindcss.com.
 let colors = {
   'transparent': 'transparent',
   'bg': '#e8dacf',
-  'primary': '#5e4c3e',
-  'buy': '#3e853e',
+  'primary': '#d7d2c5',
+  'buy': '#5f8b53',
   'logo-red': '#bd3225',
   'fb-blue': '#0000ff',
   'twitter-blue': '#007bff',
 
-  'black': '#22292f',
+  'black': '#403c32',
   'grey-darkest': '#3d4852',
   'grey-darker': '#606f7b',
   'grey-dark': '#8795a1',
@@ -425,6 +425,7 @@ module.exports = {
     '2': '2px',
     '4': '4px',
     '8': '8px',
+    '10': '10px',
   },
 
 

@@ -5,7 +5,7 @@ import tw from "tailwind.macro"
 import { media } from "./layout"
 
 const Container = styled.form`
-    ${tw`bg-light-brown text-black p-6 rounded`};
+    ${tw`border-10 border-primary p-6 rounded`};
 `
 
 const FormGroup = styled.div`
