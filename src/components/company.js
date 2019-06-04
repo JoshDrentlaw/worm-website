@@ -21,7 +21,12 @@ const Small = styled.p`
 const Company = () => (
     <Banner>
         <img className="mr-2" src="https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/c_scale,w_125/c_crop,g_custom/v1554858410/SoCal%20Earth%20Farm/logo.png" alt="Bag of compost" />
-        <CompanyContainer>SoCal<br />Earth Farm<Small>By C. Alcaraz</Small></CompanyContainer>
+        <CompanyContainer>
+            SoCal{` `}
+            <img id="worm" src="https://res.cloudinary.com/josh-drentlaw-web-development/image/upload/c_scale,h_115/c_crop,g_custom/v1555129916/SoCal%20Earth%20Farm/wormm.png" alt="Cute hand drawn Earth Worm" />
+            <br />Earth Farm
+            <Small>By C. Alcaraz</Small>
+        </CompanyContainer>
     </Banner>
 )
 
