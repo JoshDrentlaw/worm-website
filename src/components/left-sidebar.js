@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTwitter, faInstagram, faFacebookF } from "@fortawesome/free-brands-svg-icons"
 
 const Left = styled.div`
-    ${tw`flex flex-col w-lg-social m-2`}
+    ${tw`flex flex-col w-lg-social p-2`}
     grid-area: left;
 `
 

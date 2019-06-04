@@ -31,7 +31,7 @@ const Body = styled.div`
   ${tw`bg-bg relative font-cafe text-black`}
   display: grid;
   grid-template-columns: minmax(calc(1rem + 40px), calc(1rem + 50px)) minmax(0, auto) minmax(calc(1rem + 40px), calc(1rem + 50px));
-  grid-template-rows: auto auto auto auto;
+  grid-template-rows: auto auto minmax(calc(100vh - 253px), auto) auto;
   grid-template-areas:
     "company company company"
     "nav nav nav"
