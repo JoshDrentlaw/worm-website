@@ -48,5 +48,13 @@ module.exports = {
     'gatsby-plugin-netlify-identity-widget',
     'gatsby-plugin-tailwindcss',
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-react-svg`,
+      options: {
+        rule: {
+          include: /\.inline\.svg$/
+        }
+      }
+    }
   ],
 }
