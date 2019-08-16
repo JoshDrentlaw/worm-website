@@ -4,7 +4,8 @@ import styled from "styled-components";
 import tw from "tailwind.macro";
 
 const Container = styled.footer`
-    ${tw`bg-primary mt-4 p-4 text-center`}
+    ${tw`mt-4 p-4 text-center`}
+    background-color: #4fa132;
     grid-area: footer;
 `
 

@@ -5,12 +5,13 @@ import styled from "styled-components"
 import tw from "tailwind.macro"
 
 const NavContainer = styled.nav`
-    ${tw`bg-primary px-2 py-3 sticky z-10 font-bold text-left text-white text-3xl`}
+    ${tw`px-2 py-3 sticky z-10 font-bold text-left text-white text-3xl`}
+    background-color: #4fa132;
     top: 0;
     grid-area: nav;
 
     .active {
-        ${tw`text-buy`}
+        color: white;
     }
 `
 

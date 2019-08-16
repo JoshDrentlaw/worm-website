@@ -3,8 +3,9 @@ import React from 'react'
 import styled from "styled-components"
 import tw from "tailwind.macro"
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faTwitter, faInstagram, faFacebookF } from "@fortawesome/free-brands-svg-icons"
+import Twitter from '../assets/svg/twitter.inline.svg'
+import Instagram from '../assets/svg/instagram.inline.svg'
+import Facebook from '../assets/svg/facebook.inline.svg'
 
 const Left = styled.div`
     ${tw`flex flex-col w-lg-social p-2`}
@@ -18,49 +19,30 @@ const SocialContainer = styled.div`
 
 const SocialBtn = styled.button`
     ${tw`mb-2 border-0 w-sm-social xl:w-lg-social h-sm-social xl:h-lg-social`};
-
-    &#facebook-btn {
-        ${tw`bg-fb-blue`}
-
-        & #facebook-i {
-            position: relative;
-            left: 5px;
-            top: 5px;
-        }
-    }
-
-    &#twitter-btn {
-        ${tw`bg-twitter-blue`}
-    }
-
-    &#instagram-btn {
-        background-image: linear-gradient(45deg, orange, red, purple)
-    }
+    background-color: #4fa132;
+    border-radius: 5px;
 `
 
 const SocialLink = styled.a`
     ${`w-full h-full`};
+    color: white;
 
     &:visited {
         color: #2d5f2d;
     }
 `
 
-const FaIcon = styled(FontAwesomeIcon)`
-    ${tw`text-white text-sm-i xl:text-lg-i`}
-`
-
 const LeftSidebar = () => (
     <Left>
         <SocialContainer>
             <SocialBtn id="facebook-btn"><SocialLink href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <FaIcon icon={faFacebookF} id="facebook-i"></FaIcon>
+                <Facebook fill="currentColor" />
             </SocialLink></SocialBtn>
             <SocialBtn id="twitter-btn"><SocialLink href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <FaIcon icon={faTwitter}></FaIcon>
+                <Twitter fill="currentColor" />
             </SocialLink></SocialBtn>
             <SocialBtn id="instagram-btn"><SocialLink href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                <FaIcon icon={faInstagram}></FaIcon>
+                <Instagram fill="currentColor" />
             </SocialLink></SocialBtn>
         </SocialContainer>
     </Left>
