@@ -2,11 +2,21 @@ import React, { useEffect } from "react"
 import { StaticQuery, graphql } from "gatsby"
 
 import styled from "styled-components"
-import tw from "tailwind.macro"
 
 const Container = styled.section`
-    ${tw`mt-4 border border-grey-dark rounded text-center`};
     background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid #8795a1;
+    border-radius: 0.25rem;
+    text-align: center;
+    margin-top: 1rem;
+`
+
+const H2 = styled.h2`
+    border-bottom: 1px solid #8795a1;
+    font-family: hand;
+    font-size: 7rem;
+    line-height: 60px;
+    padding: 1rem 1rem 1.5rem;
 `
 
 const Hours = ({ data }) => {
@@ -31,8 +41,8 @@ const Hours = ({ data }) => {
 
     return (
         <Container id="hours">
-            <h2 className="border-b border-grey-dark font-hand text-9xl leading-hand p-4 pb-6">Hours for Delivery</h2>
-            <ul className="list-reset text-2xl" id="weekdays">
+            <H2>Hours for Delivery</H2>
+            <ul className="text-2xl" id="weekdays">
                 <li className="border-b border-grey-dark py-2" id="sunday">Sunday: {getScreenSize()} <span>{ data.allMarkdownRemark.edges[0].node.frontmatter.sunday }</span></li>
                 <li className="border-b border-grey-dark py-2" id="monday">Monday: {getScreenSize()} <span className="hours">{ data.allMarkdownRemark.edges[0].node.frontmatter.monday }</span></li>
                 <li className="border-b border-grey-dark py-2" id="tuesday">Tuesday: {getScreenSize()} <span className="hours">{ data.allMarkdownRemark.edges[0].node.frontmatter.tuesday }</span></li>

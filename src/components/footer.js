@@ -1,12 +1,13 @@
 import React from "react"
 
 import styled from "styled-components";
-import tw from "tailwind.macro";
 
 const Container = styled.footer`
-    ${tw`mt-4 p-4 text-center`}
     background-color: #4fa132;
     grid-area: footer;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 1rem;
 `
 
 const Footer = () => (

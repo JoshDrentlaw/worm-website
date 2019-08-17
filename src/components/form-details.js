@@ -1,51 +1,98 @@
 import React from "react"
 
 import styled from "styled-components"
-import tw from "tailwind.macro"
-import { media } from "./layout"
 
 const Container = styled.form`
-    ${tw`border-10 border-primary p-6 rounded`};
+    border: 10px solid #d7d2c5;
+    border-radius: 0.25rem;
+    padding: 1.5rem;
 `
 
 const FormGroup = styled.div`
-    ${tw`mb-2 flex flex-col justify-center items-center`};
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
 
-    ${media.tablet(tw`flex-row`)}
+    @media(min-width: 768px) {
+        flex-direction: row;
+    }
 `
 
 const RadioGroup = styled(FormGroup)`
-    ${tw`flex-row mb-4`}
+    flex-direction: row;
+    margin-bottom: 1rem;
 `
 
 const Header = styled.h2`
-    ${tw`text-7xl text-center mb-2 font-hand leading-hand`}
+    font-family: hand;
+    line-height: 60px;
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
 `
 
 const Label = styled.label`
-    ${tw`font-semibold font-hand text-6xl leading-hand`}
+    font-family: hand;
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 60px;
 `
 
 const FormInput = styled.input`
-    ${tw`border-2 border-black m-2 p-2 w-4/5 text-base`}
+    border: 2px solid #403c32;
+    font-size: 1rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 80%;
 `
 
 const EmailInput = styled(FormInput)`
-    ${tw`text-xl`}
+    font-size: 1.25rem;
 `
 
 const UnitInput = styled(FormInput)`
-    ${tw`w-8 text-base`}
+    font-size: 1rem;
+    width: 2rem;
 
-    ${media.tablet(tw`w-16`)}
+    @media(min-width: 768px) {
+        width: 4rem;
+    }
 `
 
 const UnitDesc = styled.small`
-    ${tw`text-black font-medium font-semibold text-2xl`}
+    color: #403c32;
+    font-size: 1.5rem;
+    font-weight: 600;
 `
 
 const SmallInfo = styled.small`
-    ${tw`block mb-8 text-center text-black text-base`}
+    color: #403c32;
+    display: block;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+`
+
+const Textarea = styled.textarea`
+    display: block;
+    border: 2px solid #403c32;
+    font-size: 1.25rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+`
+
+const Button = styled.button`
+    background-color: #5f8b53;
+    border-radius: 0.25rem;
+    color: white;
+    display: block;
+    font-size: 1.875rem;
+    margin: 0 auto;
+    padding: 0.5rem;
 `
 
 const FormDetails = (props) => (
@@ -73,22 +120,22 @@ const FormDetails = (props) => (
         <FormGroup>
             <RadioGroup>
                 <input type="radio" id="delivery" name="shipment" defaultValue={props.values.delivery} onChange={props.handleChange} required />
-                <Label htmlFor="delivery" className="ml-1 mr-3">Delivery</Label>
+                <Label htmlFor="delivery" style={{ margin: '0 0.75rem 0 0.25rem'}}>Delivery</Label>
             </RadioGroup>
             <RadioGroup>
                 <input type="radio" id="pickup" name="shipment" defaultValue={props.values.pickup} onChange={props.handleChange} defaultChecked required />
-                <Label htmlFor="pickup" className="ml-1">Pickup</Label>
+                <Label htmlFor="pickup" style={{ marginLeft: '0.25rem'}}>Pickup</Label>
             </RadioGroup>
         </FormGroup>
         <FormGroup>
-            <textarea className="p-2 mb-4 w-full block border-2 border-black leading-none text-xl" name="comment" rows="4" onChange={props.handleChange} placeholder="If you have any questions, concerns, or special instructions, let me know here."></textarea>
+            <Textarea name="comment" rows="4" onChange={props.handleChange} placeholder="If you have any questions, concerns, or special instructions, let me know here."></Textarea>
         </FormGroup>
         <FormGroup>
             <Label htmlFor="email">Email</Label>
             <EmailInput type="email" name="email" id="form-email" onChange={props.handleChange} aria-describedby="disclaimer" placeholder="Enter email" required />
         </FormGroup>
         <SmallInfo id="disclaimer">We'll never share your email with anyone else.</SmallInfo>
-        <button type="submit" className="block mx-auto bg-buy text-white p-2 rounded text-3xl" onClick={props.validate}>Contact</button>
+        <Button type="submit" onClick={props.validate}>Contact</Button>
     </Container>
 )
 

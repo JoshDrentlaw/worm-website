@@ -87,7 +87,7 @@ class Form extends React.Component {
                     <h2
                         key={1}
                         id="submit"
-                        className="text-center my-32"
+                        style={{ textAlign: 'center', margin: '8rem 0'}}
                     >Thank you for your interest!</h2>
                     : null
                 }
