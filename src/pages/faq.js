@@ -48,7 +48,21 @@ const Faq = styled.div`
 `
 
 export default () => {
-    useEffect(() => {
+    const data = useStaticQuery(graphql`
+        {
+            allSanityFaq(sort: {fields: _createdAt, order: ASC}) {
+                edges {
+                    node {
+                        id
+                        question
+                        _rawAnswer
+                    }
+                }
+            }
+        }      
+    `)
+
+    /* useEffect(() => {
         const accordions = document.getElementById('faq').children[0].children;
         for (let el of accordions) {
             el.addEventListener('click', () => {
@@ -61,12 +75,23 @@ export default () => {
                 }
             })
         }
-    })
+    }) */
+
+    const faqs = data.edges.map(({ node }) => (
+        <li key={node.id}>
+            <dl>
+                <dt>{node.question}</dt>
+                <dd>{node._rawAnswer}</dd>
+            </dl>
+        </li>
+    ))
 
     return (
         <Layout>
             <SEO title="FAQ" />
-            <Faq id="faq"></Faq>
+            <Faq id="faq">
+                {faqs}
+            </Faq>
         </Layout>
     )
 }
