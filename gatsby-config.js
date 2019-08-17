@@ -39,7 +39,6 @@ module.exports = {
         token: process.env.SANITY_TOKEN
       }
     },
-    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -56,8 +55,6 @@ module.exports = {
     },
     `gatsby-plugin-netlify`,
     'gatsby-plugin-postcss',
-    `gatsby-plugin-netlify-cms`,
-    'gatsby-plugin-netlify-identity-widget',
     'gatsby-plugin-tailwindcss',
     `gatsby-plugin-styled-components`,
     {

@@ -42,25 +42,20 @@ const ListItem = styled.li`
 const Hours = () => {
     const data = useStaticQuery(graphql`
         {
-            allMarkdownRemark {
+            allSanityHours(sort: {fields: dayOrder, order: ASC}) {
                 edges {
                     node {
-                        frontmatter {
-                        sunday
-                        monday
-                        tuesday
-                        wednesday
-                        thursday
-                        friday
-                        saturday
-                        }
+                        day
+                        close
+                        open
+                        id
                     }
                 }
             }
         }
     `)
 
-    const hours = data.allMarkdownRemark.edges[0].node.frontmatter;
+    const hours = data.allSanityHours.edges
 
     const highlightToday = () => {
         let weekday = new Date().getDay();
@@ -80,17 +75,15 @@ const Hours = () => {
         highlightToday();
     })
 
+    const days = hours.map(({ node }) => (
+        <ListItem id={node.day} key={node.id}>{`${node.day}:`} {addBreak()} {`${node.open} - ${node.close}`}</ListItem>
+    ))
+
     return (
         <Container id="hours">
             <H2>Hours for Delivery</H2>
             <List id="weekdays">
-                <ListItem id="sunday">Sunday: {addBreak()} <span>{ hours.sunday }</span></ListItem>
-                <ListItem id="monday">Monday: {addBreak()} <span>{ hours.monday }</span></ListItem>
-                <ListItem id="tuesday">Tuesday: {addBreak()} <span>{ hours.tuesday }</span></ListItem>
-                <ListItem id="wednesday">Wednesday: {addBreak()} <span>{ hours.wednesday }</span></ListItem>
-                <ListItem id="thursday">Thursday: {addBreak()} <span>{ hours.thursday }</span></ListItem>
-                <ListItem id="friday">Friday: {addBreak()} <span>{ hours.friday }</span></ListItem>
-                <ListItem id="saturday">Saturday: {addBreak()} <span>{ hours.saturday }</span></ListItem>
+                {days}
             </List>
         </Container>
     )
