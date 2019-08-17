@@ -1,31 +1,39 @@
 import React from 'react'
 
 import styled from "styled-components"
-import tw from "tailwind.macro"
 
 import Twitter from '../assets/svg/twitter.inline.svg'
 import Instagram from '../assets/svg/instagram.inline.svg'
 import Facebook from '../assets/svg/facebook.inline.svg'
 
 const Left = styled.div`
-    ${tw`flex flex-col w-lg-social p-2`}
+    display: flex;
+    flex-direction: column;
     grid-area: left;
+    padding: 0.5rem;
+    width: auto;
 `
 
 const SocialContainer = styled.div`
-    ${tw`sticky`}
+    position: sticky;
     top: 67px;
 `
 
 const SocialBtn = styled.button`
-    ${tw`mb-2 border-0 w-sm-social xl:w-lg-social h-sm-social xl:h-lg-social`};
     background-color: #4fa132;
+    border: none;
     border-radius: 5px;
+    margin-bottom: 0.5rem;
+    width: 40px; height: 40px;
+
+    @media(min-width: 1024px) {
+        width: 50px; height: 50px;
+    }
 `
 
 const SocialLink = styled.a`
-    ${`w-full h-full`};
     color: white;
+    width: 100%; height: 100%;
 
     &:visited {
         color: #2d5f2d;

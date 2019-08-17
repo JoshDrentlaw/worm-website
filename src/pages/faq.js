@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 
 import styled from 'styled-components';
 import tw from 'tailwind.macro';
@@ -47,9 +47,7 @@ const Faq = styled.div`
     }
 `
 
-export default ({ data }) => {
-    data = data.allMarkdownRemark.nodes[1].html;
-
+export default () => {
     useEffect(() => {
         const accordions = document.getElementById('faq').children[0].children;
         for (let el of accordions) {
@@ -67,18 +65,8 @@ export default ({ data }) => {
 
     return (
         <Layout>
-            <SEO title="About" />
-            <Faq id="faq" dangerouslySetInnerHTML={{__html: data}} />
+            <SEO title="FAQ" />
+            <Faq id="faq"></Faq>
         </Layout>
     )
 }
-
-export const query = graphql`
-{
-    allMarkdownRemark {
-        nodes {
-            html
-        }
-    }
-}
-`

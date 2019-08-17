@@ -1,9 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
 
 import styled, { css } from "styled-components"
-import tw from "tailwind.macro"
 
 import Company from './company'
 import Nav from './nav'
@@ -28,51 +26,44 @@ export const media = Object.keys(sizes).reduce((acc, label) => {
 }, {})
 
 const Body = styled.div`
-  ${tw`bg-bg relative font-cafe text-black`}
+  background-color: var(--bg);
+  color: #403c32;
   display: grid;
+  font-family: cafe;
   grid-template-columns: minmax(calc(1rem + 40px), calc(1rem + 50px)) minmax(0, auto) minmax(calc(1rem + 40px), calc(1rem + 50px));
-  grid-template-rows: auto auto minmax(calc(100vh - 253px), auto) auto;
+  grid-template-rows: auto auto minmax(calc(100vh - 269px), auto) auto;
   grid-template-areas:
     "company company company"
     "nav nav nav"
     "left content ."
     "footer footer footer";
+  position: relative;
 `
 
 const Container = styled.main`
-  ${tw`flex flex-col md:mx-auto relative z-0 lg:w-3/5`};
+  display: flex;
+  flex-direction: column;
   grid-area: content;
+  position: relative;
+  z-index: 0;
 
-  & i {
-    ${media.desktop(tw`text-lg-i`)}
+  @media(min-width: 768px) {
+    margin: 0 auto;
   }
 
-  & .navlink {
-    ${media.desktop(tw`text-2xl`)}
+  @media(min-width: 1024px) {
+    width: 60%;
   }
 `
 
 const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <Body>
-        <Company />
-        <Nav />
-        <LeftSidebar />
-        <Container>{children}</Container>
-        <Footer />
-      </Body>
-    )}
-  />
+  <Body>
+    <Company />
+    <Nav />
+    <LeftSidebar />
+    <Container>{children}</Container>
+    <Footer />
+  </Body>
 )
 
 Layout.propTypes = {

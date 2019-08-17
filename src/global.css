@@ -26,6 +26,10 @@
     font-style: normal;
 }
 
+:root {
+    --bg: #e8dacf;
+}
+
 html {
     scroll-behavior: smooth;
 }

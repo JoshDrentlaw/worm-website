@@ -2,23 +2,38 @@ import { Link } from "gatsby"
 import React from "react"
 
 import styled from "styled-components"
-import tw from "tailwind.macro"
 
 const NavContainer = styled.nav`
-    ${tw`px-2 py-3 sticky z-10 font-bold text-left text-white text-3xl`}
     background-color: #4fa132;
-    top: 0;
+    color: white;
+    font-size: 1.875rem;
+    font-weight: 700;
+    text-align: left;
     grid-area: nav;
+    padding: 0.75rem 0.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 
     .active {
         color: white;
     }
 `
 
+const StyledLink = styled(Link)`
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem;
+
+    &:last-child {
+        margin-right: 0;
+    }
+`
+
 const Nav = () => (
     <NavContainer id="nav">
-        <Link activeClassName="active" className="text-white mr-4 no-underline" to="/">Home</Link>
-        <Link activeClassName="active" className="text-white no-underline" to="/about/">About</Link>
+        <StyledLink activeClassName="active" to="/">Home</StyledLink>
+        <StyledLink activeClassName="active" to="/faq/">FAQ</StyledLink>
     </NavContainer>
 )
 

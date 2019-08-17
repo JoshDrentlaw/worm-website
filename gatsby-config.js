@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
 module.exports = {
   siteMetadata: {
     title: `Alcaraz Worms and Compost`,
@@ -26,6 +30,14 @@ module.exports = {
         path: `${__dirname}/content/faq`,
         name: "faq",
       },
+    },
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: 'kjilr0vi',
+        dataset: 'products',
+        token: process.env.SANITY_TOKEN
+      }
     },
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
