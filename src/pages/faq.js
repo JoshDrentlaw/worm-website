@@ -7,12 +7,14 @@ import BlockContent from '@sanity/block-content-to-react'
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 
-const FaqBody = styled.div`
+const FaqBody = styled.ul`
     list-style: none;
     padding-left: 0;
 `
 
-const Answer = styled.dl``
+const Answer = styled.dd`
+    display: none;
+`
 
 const Faq = () => {
     const data = useStaticQuery(graphql`
@@ -27,11 +29,11 @@ const Faq = () => {
         }      
     `)
 
-    /* useEffect(() => {
-        const accordions = document.getElementById('faq').children;
-        accordions.map((el) => {
+    useEffect(() => {
+        const accordions = document.getElementsByClassName('accordion');
+        for (let el of accordions) {
             el.addEventListener('click', () => {
-                const panel = el.childNodes[0].childNodes[1];
+                let panel = el.childNodes[0].childNodes[1];
                 if (panel.style.display === '' || panel.style.display === 'none') {
                     panel.style.display = 'block';
                 }
@@ -39,14 +41,14 @@ const Faq = () => {
                     panel.style.display = 'none';
                 }
             })
-        })
-    }) */
+        }
+    })
 
     const faqList = data.allSanityFaq.edges[0].node._rawQaGroup.map(({ ...data }) => (
-        <li key={data._key}>
+        <li className="accordion" key={data._key}>
             <dl>
                 <dt>{data.question}</dt>
-                <Answer className="answer">
+                <Answer>
                     <BlockContent blocks={data.answer} />
                 </Answer>
             </dl>
