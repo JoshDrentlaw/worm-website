@@ -7,7 +7,10 @@ import BlockContent from '@sanity/block-content-to-react'
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 
-const FaqBody = styled.div``
+const FaqBody = styled.div`
+    list-style: none;
+    padding-left: 0;
+`
 
 const Answer = styled(BlockContent)``
 

@@ -18,20 +18,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/hours`,
-        name: "hours",
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/faq`,
-        name: "faq",
-      },
-    },
-    {
       resolve: 'gatsby-source-sanity',
       options: {
         projectId: 'kjilr0vi',
@@ -54,8 +40,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify`,
-    'gatsby-plugin-postcss',
-    'gatsby-plugin-tailwindcss',
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-react-svg`,
