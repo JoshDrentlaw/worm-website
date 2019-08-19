@@ -35,7 +35,7 @@ const Company = () => {
         {
             file(relativePath: {eq: "logo.png"}) {
                 childImageSharp {
-                    fixed(width: 125, height: 65) {
+                    fixed(width: 80) {
                         ...GatsbyImageSharpFixed
                     }
                 }
