@@ -8,12 +8,41 @@ import SEO from '../components/seo';
 import Layout from '../components/layout';
 
 const FaqBody = styled.ul`
+    cursor: pointer;
     list-style: none;
     padding-left: 0;
 `
 
+const Question = styled.dt`
+    font-size: calc(20px + (28 - 20) * (100vw - 300px) / (880 - 300));
+    font-weight: 700;
+    margin-bottom: 10px;
+
+    &::before {
+        content: "+ ";
+    }
+`
+
 const Answer = styled.dd`
     display: none;
+    margin-left: 0;
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+        font-size: calc(20px + (25 - 20) * (100vw - 300px) / (880 - 300));
+        margin-bottom: 20px;
+
+        li {
+            margin-bottom: 10px;
+        }
+    }
+
+    ul ul {
+        list-style: none;
+        padding-left: 0;
+        font-size: calc(17px + (20 - 17) * (100vw - 300px) / (880 - 300));
+    }
 `
 
 const Faq = () => {
@@ -47,7 +76,7 @@ const Faq = () => {
     const faqList = data.allSanityFaq.edges[0].node._rawQaGroup.map(({ ...data }) => (
         <li className="accordion" key={data._key}>
             <dl>
-                <dt>{data.question}</dt>
+                <Question>{data.question}</Question>
                 <Answer>
                     <BlockContent blocks={data.answer} />
                 </Answer>

@@ -24,6 +24,7 @@ const SocialBtn = styled.button`
     border: 5px solid #9a7f60;
     border-radius: 5px;
     margin-bottom: 0.5rem;
+    padding: 0;
     width: 40px; height: 40px;
 
     @media(min-width: 1024px) {
