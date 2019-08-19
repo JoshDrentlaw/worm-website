@@ -43,7 +43,6 @@ export default function HTML(props) {
             };`
           }}
         />
-        <script type="text/javascript" src="smoothscroll.js"></script>
         <script type="text/javascript" src="https://cdn.userway.org/widget.js"></script>
       </body>
     </html>

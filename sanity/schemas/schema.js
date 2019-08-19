@@ -15,6 +15,7 @@ import faq from './faq'
 import localeString from './locale/String'
 import localeText from './locale/Text'
 import localeBlockContent from './locale/BlockContent'
+import qa from './locale/qa'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -36,6 +37,7 @@ export default createSchema({
     localeText,
     localeBlockContent,
     localeString,
-    productVariant
+    productVariant,
+    qa
   ])
 })

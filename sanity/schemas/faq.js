@@ -4,19 +4,24 @@ export default {
     type: 'document',
     fields: [
         {
-            name: 'question',
-            title: 'Question',
+            title: 'Q/A Group Name',
+            name: 'qaTitle',
             type: 'string'
         },
         {
-            name: 'answer',
-            title: 'Answer',
-            type: 'blockContent'
+            title: 'Q/A Group',
+            name: 'qaGroup',
+            type: 'array',
+            descrption: 'This allows you to order the questions how you want.',
+            of: [{
+                type: 'q-a',
+                name: 'q-a'
+            }]
         }
     ],
     preview: {
         select: {
-            title: 'question'
+            title: 'qaTitle'
         }
     }
 }

@@ -8,16 +8,20 @@ const Container = styled.footer`
     text-align: center;
     margin-top: 1rem;
     padding: 1rem;
+
+    a {
+        color: white;
+    }
 `
 
 const Footer = () => (
     <Container>
-        © {new Date().getFullYear()}, Built with
+        C. Alcaraz © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.org" target="_blank" rel="noopener noreferrer">Gatsby</a>
         {` `}
         by{` `}
-        <a href="https://joshdrentlaw.com" target="_blank" rel="noopener noreferrer">&lt;jdwd&gt;</a>
+        <a href="https://joshdrentlaw.com" target="_blank" rel="noopener noreferrer">Josh Drentlaw Web Design</a>
     </Container>
 )
 

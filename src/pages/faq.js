@@ -1,61 +1,23 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useStaticQuery, graphql } from "gatsby";
 
 import styled from 'styled-components';
-import tw from 'tailwind.macro';
+import BlockContent from '@sanity/block-content-to-react'
 
 import SEO from '../components/seo';
 import Layout from '../components/layout';
 
-const Faq = styled.div`
-    ${tw`mt-5 lg:w-full text-xl`}
+const FaqBody = styled.div``
 
-    /* Whole list */
-    ul {
-        ${tw`list-reset cursor-pointer select-none`}
-    }
+const Answer = styled(BlockContent)``
 
-    & > ul > li {
-        ${tw`p-3`}
-
-        /* Question */
-        & > p {
-            ${tw`font-bold text-black`}
-
-            ::before {
-                content: "+ "
-            }
-        }
-
-        & > ul {
-            ${tw`hidden overflow-hidden p-5`}
-
-            /* Answer */
-            & > li {
-                ${tw`py-2`}
-
-                & > p {
-                    ${tw`font-bold mb-2`}
-                }
-
-                /* Inner bullet */
-                & > ul > li {
-                    ${tw`py-2 pl-2`}
-                }
-            }
-        }
-    }
-`
-
-export default () => {
+const Faq = () => {
     const data = useStaticQuery(graphql`
         {
-            allSanityFaq(sort: {fields: _createdAt, order: ASC}) {
+            allSanityFaq {
                 edges {
                     node {
-                        id
-                        question
-                        _rawAnswer
+                        _rawQaGroup
                     }
                 }
             }
@@ -77,11 +39,11 @@ export default () => {
         }
     }) */
 
-    const faqs = data.edges.map(({ node }) => (
-        <li key={node.id}>
+    const faqList = data.allSanityFaq.edges[0].node._rawQaGroup.map(({ ...data }) => (
+        <li key={data._key}>
             <dl>
-                <dt>{node.question}</dt>
-                <dd>{node._rawAnswer}</dd>
+                <dt>{data.question}</dt>
+                <Answer blocks={data.answer} />
             </dl>
         </li>
     ))
@@ -89,9 +51,11 @@ export default () => {
     return (
         <Layout>
             <SEO title="FAQ" />
-            <Faq id="faq">
-                {faqs}
-            </Faq>
+            <FaqBody id="faq">
+                {faqList}
+            </FaqBody>
         </Layout>
     )
 }
+
+export default Faq
