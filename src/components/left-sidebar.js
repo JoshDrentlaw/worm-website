@@ -20,8 +20,8 @@ const SocialContainer = styled.div`
 `
 
 const SocialBtn = styled.button`
-    background-color: #4fa132;
-    border: none;
+    background-color: #00000000;
+    border: 5px solid #9a7f60;
     border-radius: 5px;
     margin-bottom: 0.5rem;
     width: 40px; height: 40px;
@@ -32,7 +32,7 @@ const SocialBtn = styled.button`
 `
 
 const SocialLink = styled.a`
-    color: white;
+    color: #4d3c28;
     width: 100%; height: 100%;
 
     &:visited {

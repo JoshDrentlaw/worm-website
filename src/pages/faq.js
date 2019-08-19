@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useStaticQuery, graphql } from "gatsby";
 
 import styled from 'styled-components';
@@ -12,7 +12,7 @@ const FaqBody = styled.div`
     padding-left: 0;
 `
 
-const Answer = styled(BlockContent)``
+const Answer = styled.dl``
 
 const Faq = () => {
     const data = useStaticQuery(graphql`
@@ -28,10 +28,10 @@ const Faq = () => {
     `)
 
     /* useEffect(() => {
-        const accordions = document.getElementById('faq').children[0].children;
-        for (let el of accordions) {
+        const accordions = document.getElementById('faq').children;
+        accordions.map((el) => {
             el.addEventListener('click', () => {
-                const panel = el.childNodes[3];
+                const panel = el.childNodes[0].childNodes[1];
                 if (panel.style.display === '' || panel.style.display === 'none') {
                     panel.style.display = 'block';
                 }
@@ -39,14 +39,16 @@ const Faq = () => {
                     panel.style.display = 'none';
                 }
             })
-        }
+        })
     }) */
 
     const faqList = data.allSanityFaq.edges[0].node._rawQaGroup.map(({ ...data }) => (
         <li key={data._key}>
             <dl>
                 <dt>{data.question}</dt>
-                <Answer blocks={data.answer} />
+                <Answer className="answer">
+                    <BlockContent blocks={data.answer} />
+                </Answer>
             </dl>
         </li>
     ))
