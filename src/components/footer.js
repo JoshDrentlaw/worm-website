@@ -12,15 +12,22 @@ const Container = styled.footer`
     a {
         color: white;
     }
+
+    .lineBreak {
+        display: inline;
+
+        @media(min-width: 1024px) {
+            display: none;
+        }
+    }
 `
 
 const Footer = () => (
     <Container>
-        C. Alcaraz © {new Date().getFullYear()}, Built with
+        C. Alcaraz © {new Date().getFullYear()},
         {` `}
-        <a href="https://www.gatsbyjs.org" target="_blank" rel="noopener noreferrer">Gatsby</a>
+        <br className="lineBreak" />Built by
         {` `}
-        by{` `}
         <a href="https://joshdrentlaw.com" target="_blank" rel="noopener noreferrer">Josh Drentlaw Web Design</a>
     </Container>
 )
