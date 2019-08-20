@@ -34,11 +34,10 @@ const SocialBtn = styled.button`
 
 const SocialLink = styled.a`
     color: #4d3c28;
-    width: 100%; height: 100%;
-
-    &:visited {
-        color: #2d5f2d;
-    }
+    width: auto; height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 const LeftSidebar = () => (
