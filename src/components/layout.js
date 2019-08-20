@@ -15,13 +15,17 @@ const Body = styled.div`
   display: grid;
   font-family: cafe;
   grid-template-columns: minmax(calc(1rem + 40px), calc(1rem + 50px)) minmax(0, auto) minmax(calc(1rem + 40px), calc(1rem + 50px));
-  grid-template-rows: auto auto minmax(calc(100vh - 272px), auto) auto;
+  grid-template-rows: auto auto minmax(calc(100vh - 295px), auto) auto;
   grid-template-areas:
     "company company company"
     "nav nav nav"
     "left content ."
     "footer footer footer";
   position: relative;
+
+  @media(min-width: 1024px) {
+    grid-template-rows: auto auto minmax(calc(100vh - 276px), auto) auto;
+  }
 `
 
 const Container = styled.main`
