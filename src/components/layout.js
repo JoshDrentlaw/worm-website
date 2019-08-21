@@ -35,11 +35,8 @@ const Container = styled.main`
   position: relative;
   z-index: 0;
 
-  @media(min-width: 768px) {
-    margin: 0 auto;
-  }
-
   @media(min-width: 1024px) {
+    margin: 0 auto;
     width: 60%;
   }
 `
