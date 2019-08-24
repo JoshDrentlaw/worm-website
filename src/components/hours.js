@@ -37,6 +37,14 @@ const ListItem = styled.li`
     &:last-child {
         border-bottom: none;
     }
+
+    .lineBreak{
+        display: inline;
+
+        @media(min-width: 768px) {
+            display: none;
+        }
+    }
 `
 
 const Hours = () => {
@@ -63,20 +71,12 @@ const Hours = () => {
         weekdays.item(weekday).classList.add('today');
     }
 
-    const addBreak = () => {
-        const isClient = typeof window !== 'undefined';
-        if (isClient && window.outerWidth <= 420) {
-            return (<br />);
-        }
-        else return null 
-    }
-
     useEffect(() => {
         highlightToday();
     })
 
     const days = hours.map(({ node }) => (
-        <ListItem id={node.day} key={node.id}>{`${node.day}:`} {addBreak()} {`${node.open} - ${node.close}`}</ListItem>
+        <ListItem id={node.day} key={node.id}>{`${node.day}:`} <br className="lineBreak" /> {`${node.open} - ${node.close}`}</ListItem>
     ))
 
     return (
