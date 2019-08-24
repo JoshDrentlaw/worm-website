@@ -43,11 +43,15 @@ const Notice = styled.h3`
 const Placeholder = styled.div`
     color: white;
     background-color: #808080;
-    width: 300px; height: 300px;
+    width: 225px; height: 225px;
     font-size: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media(min-width: 1024px) {
+        width: 300px; height: 300px;
+    }
 `
 
 const HeroImg = () => {
