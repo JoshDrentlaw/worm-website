@@ -1,5 +1,5 @@
 import React from "react"
-// import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 // import Img from 'gatsby-image'
 
 import Layout from "../components/layout"
@@ -18,13 +18,43 @@ const Section = styled.section`
     }
 `
 
-const IndexPage = () => (
-    <Layout>
-        <SEO title="Home" keywords={[]} />
-        <Section>
-            
-        </Section>
-    </Layout>
-)
+const ItemBox = styled.figure`
+    background-color: grey;
+    width: 200px; height: 200px;
+    margin: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
+const IndexPage = () => {
+    const data = useStaticQuery(graphql`
+        allSanityProduct {
+            edges {
+                node {
+                    title
+                }
+            }
+        }
+    `)
+
+    const items = data.allSanityProducts.edges.map(({ node }) => {
+        return (
+            <ItemBox>
+                <h2>{node.title}</h2>
+            </ItemBox>
+        )
+    })
+
+    return (
+        <Layout>
+            <SEO title="Home" keywords={[]} />
+            <Section>
+                <h1>Please see my selection of products</h1>
+                {items}
+            </Section>
+        </Layout>
+    )
+}
 
 export default IndexPage
