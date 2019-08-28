@@ -33,6 +33,7 @@ const StyledLink = styled(Link)`
 const Nav = () => (
     <NavContainer id="nav">
         <StyledLink activeClassName="active" to="/">Home</StyledLink>
+        <StyledLink activeClassName="active" to="/about/">About</StyledLink>
         <StyledLink activeClassName="active" to="/faq/">FAQ</StyledLink>
     </NavContainer>
 )
