@@ -14,7 +14,8 @@ const Section = styled.section`
     align-items: center;
 
     @media(min-width: 1024px) {
-        flex-direction: ${props => props.flexDirD || 'column'};
+        display: grid;
+        grid-auto-columns: 200px;
     }
 `
 
@@ -25,33 +26,34 @@ const ItemBox = styled.figure`
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 `
 
 const IndexPage = () => {
     const data = useStaticQuery(graphql`
-        allSanityProduct {
-            edges {
-                node {
-                    title
+        {
+            allSanityProduct {
+                edges {
+                    node {
+                        title
+                    }
                 }
             }
         }
     `)
 
-    const items = data.allSanityProducts.edges.map(({ node }) => {
-        return (
-            <ItemBox>
-                <h2>{node.title}</h2>
-            </ItemBox>
-        )
-    })
+    console.log(data)
 
     return (
         <Layout>
             <SEO title="Home" keywords={[]} />
+            <h1 style={{ textAlign: 'center' }}>Please see my selection of products</h1>
             <Section>
-                <h1>Please see my selection of products</h1>
-                {items}
+                {data.allSanityProduct.edges.map(({ node }) => (
+                    <ItemBox>
+                        <h2>{node.title}</h2>
+                    </ItemBox>
+                ))}
             </Section>
         </Layout>
     )
