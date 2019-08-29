@@ -12,6 +12,7 @@ const Section = styled.section`
     grid-template-columns: repeat(auto-fit, minmax(calc(200px + 1em), 1fr));
     grid-template-rows: calc(200px + 1em);
     grid-gap: 1em;
+    position: relative;
 `
 
 const ItemBox = styled.figure`
@@ -22,6 +23,22 @@ const ItemBox = styled.figure`
     justify-content: center;
     align-items: center;
     text-align: center;
+    user-select: none;
+
+    .overlay {
+        background-color: black;
+        color: white;
+        position: absolute;
+        top: 0; left: 0;
+        width: 200px; height: 200px;
+        margin: 0.5em auto;
+        opacity: 0;
+        transition: .5s ease;
+    }
+
+    &:hover .overlay {
+        opacity: 1;
+    }
 `
 
 const IndexPage = () => {
@@ -47,6 +64,9 @@ const IndexPage = () => {
                 {data.allSanityProduct.edges.map(({ node }) => (
                     <ItemBox>
                         <h2>{node.title}</h2>
+                        <div className="overlay">
+                            <h2>Overlay!</h2>
+                        </div>
                     </ItemBox>
                 ))}
             </Section>
