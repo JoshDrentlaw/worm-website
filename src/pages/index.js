@@ -24,14 +24,14 @@ const ItemBox = styled.figure`
     align-items: center;
     text-align: center;
     user-select: none;
+    position: relative;
 
     .overlay {
         background-color: black;
         color: white;
         position: absolute;
         top: 0; left: 0;
-        width: 200px; height: 200px;
-        margin: 0.5em auto;
+        width: 100%; height: 100%;
         opacity: 0;
         transition: .5s ease;
     }
@@ -66,6 +66,7 @@ const IndexPage = () => {
                         <h2>{node.title}</h2>
                         <div className="overlay">
                             <h2>Overlay!</h2>
+                            <button><a href="/">View Item</a></button>
                         </div>
                     </ItemBox>
                 ))}
